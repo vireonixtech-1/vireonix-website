@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contact Us
+    url: https://vireonixtech.com/#contact
+    about: For business inquiries, please use our contact form
+  - name: Email Support
+    url: mailto:hr@vireonixtech.com
+    about: Send us an email directly
