@@ -1,0 +1,178 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Cloud Migration Services | AWS, Azure, GCP | Vireonix Technologies",
+  description: "Expert cloud migration services for AWS, Azure, and Google Cloud. Lift-and-shift, re-platforming, cloud-native transformation. Minimize downtime, maximize ROI. Get started.",
+  serviceName: "Cloud Migration",
+  serviceTagline: "Seamlessly migrate your infrastructure to the cloud with zero downtime. Expert AWS, Azure, and GCP migration services for enterprises.",
+  heroIcon: `<svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" /></svg>`,
+  gradientFrom: "secondary",
+  gradientTo: "accent",
+  features: [
+    {
+      title: "Cloud Assessment",
+      description: "Comprehensive analysis of your current infrastructure, applications, and workloads to create a tailored migration strategy.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Lift & Shift Migration",
+      description: "Rapid migration of existing applications to the cloud with minimal changes, reducing time-to-cloud and immediate cost savings.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Cloud-Native Transformation",
+      description: "Modernize applications with containers, microservices, and serverless architectures for maximum cloud benefits.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Database Migration",
+      description: "Secure migration of databases to cloud-native solutions like RDS, Aurora, Cloud SQL with zero data loss.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Hybrid Cloud Architecture",
+      description: "Design and implement hybrid solutions that seamlessly connect on-premises infrastructure with cloud resources.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Cloud Optimization",
+      description: "Continuous cost optimization, performance tuning, and governance to maximize your cloud ROI post-migration.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    }
+  ],
+  technologies: ["AWS", "Microsoft Azure", "Google Cloud Platform", "Kubernetes", "Docker", "Terraform", "CloudFormation", "Ansible", "Jenkins", "GitHub Actions", "Datadog", "CloudWatch"],
+  benefits: [
+    { stat: "100+", label: "Migrations Completed" },
+    { stat: "40%", label: "Avg. Cost Reduction" },
+    { stat: "99.9%", label: "Uptime During Migration" },
+    { stat: "60%", label: "Faster Time to Market" }
+  ],
+  faqs: [
+    {
+      question: "Which cloud platform should we migrate to?",
+      answer: "The best platform depends on your specific needs. AWS offers the broadest service portfolio, Azure integrates well with Microsoft ecosystems, and GCP excels in data analytics and machine learning. We provide unbiased assessments and recommend the platform that best fits your technical requirements, compliance needs, and budget."
+    },
+    {
+      question: "How do you ensure zero downtime during migration?",
+      answer: "We use phased migration approaches, including parallel running environments, database replication, DNS-based traffic switching, and blue-green deployments. Critical systems are migrated during maintenance windows. We create detailed runbooks and rollback plans to handle any issues."
+    },
+    {
+      question: "What is the typical cost savings from cloud migration?",
+      answer: "Most organizations see 20-40% cost reduction after cloud migration through eliminated hardware costs, right-sized resources, and pay-as-you-go pricing. Additional savings come from reduced IT overhead and increased developer productivity. We provide detailed TCO analysis during the assessment phase."
+    },
+    {
+      question: "How long does a cloud migration take?",
+      answer: "Timeline varies based on complexity. A simple lift-and-shift for a few applications can take 4-8 weeks. Large enterprise migrations with hundreds of applications may take 12-18 months. We provide detailed project plans with clear milestones after the assessment phase."
+    },
+    {
+      question: "How do you handle data security during migration?",
+      answer: "Security is paramount. We use encrypted data transfers, maintain compliance with regulations (HIPAA, PCI-DSS, SOC 2), implement IAM best practices, and conduct security testing throughout. Data never leaves protected environments, and we maintain detailed audit trails."
+    }
+  ],
+  relatedServices: [
+    { name: "Cybersecurity", href: "/services/cybersecurity" },
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "Generative AI", href: "/services/generative-ai" },
+    { name: "Salesforce Solutions", href: "/services/salesforce-solutions" }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData}>
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+            Certified Cloud Experts
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Our team holds certifications across all major cloud platforms. We've successfully migrated workloads for startups to Fortune 500 enterprises.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">AWS Advanced Consulting Partner</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Microsoft Gold Partner</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Google Cloud Partner</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Kubernetes Certified</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-secondary/10 to-accent/10 rounded-3xl p-8 text-center">
+          <div class="text-6xl mb-4">☁️</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Featured Migration</h3>
+          <p class="text-gray-600 mb-4">RetailMax - Migrated 500+ VMs to AWS with zero downtime, 45% cost reduction</p>
+          <div class="flex justify-center gap-4 text-sm">
+            <span class="px-3 py-1 bg-white rounded-full">Zero Downtime</span>
+            <span class="px-3 py-1 bg-white rounded-full">45% Savings</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Migration Strategies -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+          Migration Strategies
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Choose the right approach based on your timeline, budget, and goals
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Rehost (Lift & Shift)</h3>
+          <p class="text-gray-600 mb-4">Move applications as-is to the cloud. Fastest path with minimal risk.</p>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li>• Fastest time to cloud</li>
+            <li>• Minimal code changes</li>
+            <li>• Immediate cost savings</li>
+            <li>• Good for legacy apps</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-accent">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Replatform</h3>
+          <p class="text-gray-600 mb-4">Optimize during migration to leverage cloud-native services.</p>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li>• Use managed services</li>
+            <li>• Improved performance</li>
+            <li>• Reduced operational overhead</li>
+            <li>• Balanced approach</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-secondary">
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Refactor</h3>
+          <p class="text-gray-600 mb-4">Rebuild applications as cloud-native for maximum benefits.</p>
+          <ul class="text-sm text-gray-500 space-y-2">
+            <li>• Full cloud benefits</li>
+            <li>• Maximum scalability</li>
+            <li>• Modern architecture</li>
+            <li>• Long-term ROI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

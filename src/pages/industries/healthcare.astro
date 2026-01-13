@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vireonixtech.com" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://vireonixtech.com/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Healthcare" }
+  ]
+};
+---
+
+<Layout
+  title="Healthcare Technology Solutions | HIPAA Compliant | Vireonix Technologies"
+  description="HIPAA-compliant healthcare IT solutions. EHR integration, telehealth platforms, AI diagnostics, claims processing automation. Trusted by 50+ healthcare organizations."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-sm text-white/60 mb-8">
+          <a href="/" class="hover:text-white">Home</a>
+          <span>/</span>
+          <a href="/industries" class="hover:text-white">Industries</a>
+          <span>/</span>
+          <span class="text-white">Healthcare</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="text-6xl mb-6">🏥</div>
+            <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold mb-6">
+              Healthcare Technology Solutions
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              HIPAA-compliant solutions that improve patient outcomes, streamline operations, and reduce costs across the healthcare ecosystem.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Get Started
+              </a>
+              <a href="/case-studies/healthfirst-ai-document-processing" class="bg-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
+                View Case Study
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">50+</div>
+              <div class="text-white/80">Healthcare Clients</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">100%</div>
+              <div class="text-white/80">HIPAA Compliant</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">15+</div>
+              <div class="text-white/80">Years Experience</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">5M+</div>
+              <div class="text-white/80">Patients Served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Healthcare Solutions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            End-to-end technology solutions for providers, payers, and life sciences
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">EHR/EMR Integration</h3>
+            <p class="text-gray-600 mb-4">Seamless integration with Epic, Cerner, Allscripts, and other major EHR systems. HL7 FHIR compliant APIs.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Bi-directional data sync</li>
+              <li>• Custom workflow automation</li>
+              <li>• Patient portal development</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Telehealth Platforms</h3>
+            <p class="text-gray-600 mb-4">Custom telehealth solutions with video visits, remote monitoring, and virtual care coordination.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• HIPAA-compliant video</li>
+              <li>• Mobile apps for patients</li>
+              <li>• RPM device integration</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AI & Clinical Intelligence</h3>
+            <p class="text-gray-600 mb-4">AI-powered clinical decision support, diagnostic assistance, and predictive analytics.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Clinical documentation AI</li>
+              <li>• Diagnostic image analysis</li>
+              <li>• Readmission prediction</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Revenue Cycle & Claims</h3>
+            <p class="text-gray-600 mb-4">Automated claims processing, denial management, and revenue cycle optimization.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Claims automation</li>
+              <li>• Denial prediction</li>
+              <li>• Prior authorization</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Interoperability & HIE</h3>
+            <p class="text-gray-600 mb-4">Health information exchange solutions enabling secure data sharing across organizations.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• FHIR API development</li>
+              <li>• HIE connectivity</li>
+              <li>• Data normalization</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Compliance & Security</h3>
+            <p class="text-gray-600 mb-4">HIPAA compliance assessments, security implementations, and ongoing monitoring.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• HIPAA gap analysis</li>
+              <li>• Security architecture</li>
+              <li>• Audit preparation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+              HIPAA Compliance Built In
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              Every solution we build meets the strictest healthcare compliance requirements. We understand the regulatory landscape and build security into every layer.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">HIPAA Privacy & Security Rule Compliant</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">SOC 2 Type II Certified</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">HITRUST CSF Aligned</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">Regular Penetration Testing</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Our Healthcare Compliance Approach</h3>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">1</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Risk Assessment</h4>
+                  <p class="text-gray-600 text-sm">Comprehensive analysis of PHI touchpoints</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">2</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Security by Design</h4>
+                  <p class="text-gray-600 text-sm">Encryption, access controls, audit logging built in</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">3</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Ongoing Monitoring</h4>
+                  <p class="text-gray-600 text-sm">Continuous compliance monitoring and updates</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">4</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Documentation</h4>
+                  <p class="text-gray-600 text-sm">Audit-ready documentation and policies</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-accent text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Transform Healthcare Delivery?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Let's discuss how we can help you improve patient outcomes and operational efficiency.
+        </p>
+        <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          Schedule Healthcare Consultation
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

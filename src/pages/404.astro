@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Page Not Found | Vireonix Technologies"
+  description="The page you're looking for doesn't exist. Let's help you find what you need."
+>
+  <Header />
+  <main class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-2xl mx-auto px-6 py-32 text-center">
+      <!-- 404 Illustration -->
+      <div class="mb-8">
+        <div class="text-9xl font-montserrat font-extrabold text-primary/20">404</div>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-4">
+        Page Not Found
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-8">
+        Oops! The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+      </p>
+
+      <!-- Quick Links -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="/" class="bg-button-gradient text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          </svg>
+          Go Home
+        </a>
+        <a href="/#contact" class="bg-white border border-gray-200 text-gray-800 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2">
+          Contact Us
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Helpful Links -->
+      <div class="bg-gray-50 rounded-2xl p-8">
+        <h2 class="text-lg font-bold text-gray-900 mb-6">Looking for something specific?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <a href="/#services" class="text-gray-600 hover:text-primary transition-colors">Our Services</a>
+          <a href="/about" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+          <a href="/blog" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+          <a href="/case-studies" class="text-gray-600 hover:text-primary transition-colors">Case Studies</a>
+          <a href="/industries" class="text-gray-600 hover:text-primary transition-colors">Industries</a>
+          <a href="/services/web-development" class="text-gray-600 hover:text-primary transition-colors">Web Development</a>
+          <a href="/services/mobile-app-development" class="text-gray-600 hover:text-primary transition-colors">Mobile Apps</a>
+          <a href="/services/generative-ai" class="text-gray-600 hover:text-primary transition-colors">Generative AI</a>
+        </div>
+      </div>
+
+      <!-- Search suggestion -->
+      <p class="text-gray-500 mt-8 text-sm">
+        Still can't find what you're looking for? <a href="/#contact" class="text-primary hover:underline">Get in touch</a> and we'll help you out.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const siteStructure = [
+  {
+    title: "Main Pages",
+    links: [
+      { name: "Home", url: "/" },
+      { name: "About Us", url: "/about" },
+      { name: "Contact", url: "/#contact" },
+      { name: "FAQ", url: "/faq" },
+      { name: "Careers", url: "/careers" },
+      { name: "Partners", url: "/partners" },
+      { name: "Resources", url: "/resources" }
+    ]
+  },
+  {
+    title: "Services",
+    links: [
+      { name: "Mobile App Development", url: "/services/mobile-app-development" },
+      { name: "Web Development", url: "/services/web-development" },
+      { name: "Salesforce Solutions", url: "/services/salesforce-solutions" },
+      { name: "Generative AI", url: "/services/generative-ai" },
+      { name: "UI/UX Design", url: "/services/ui-ux-design" },
+      { name: "Cloud Migration", url: "/services/cloud-migration" },
+      { name: "Cybersecurity", url: "/services/cybersecurity" },
+      { name: "WordPress Development", url: "/services/wordpress-development" },
+      { name: "Database Security", url: "/services/database-security" }
+    ]
+  },
+  {
+    title: "Industries",
+    links: [
+      { name: "All Industries", url: "/industries" },
+      { name: "Healthcare", url: "/industries/healthcare" },
+      { name: "Financial Services", url: "/industries/financial-services" },
+      { name: "Retail & E-commerce", url: "/industries/retail" },
+      { name: "Manufacturing", url: "/industries/manufacturing" },
+      { name: "Technology", url: "/industries/technology" },
+      { name: "Education", url: "/industries/education" }
+    ]
+  },
+  {
+    title: "Case Studies",
+    links: [
+      { name: "All Case Studies", url: "/case-studies" },
+      { name: "HealthFirst - AI Document Processing", url: "/case-studies/healthfirst-ai-document-processing" },
+      { name: "RetailMax - Cloud Migration", url: "/case-studies/retailmax-cloud-migration" }
+    ]
+  },
+  {
+    title: "Blog",
+    links: [
+      { name: "All Articles", url: "/blog" },
+      { name: "Guide to Generative AI for Enterprise", url: "/blog/guide-to-generative-ai-enterprise" },
+      { name: "Cloud Migration Strategy 2025", url: "/blog/cloud-migration-strategy-2025" }
+    ]
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Privacy Policy", url: "/privacy-policy" },
+      { name: "Terms of Service", url: "/terms-of-service" }
+    ]
+  }
+];
+---
+
+<Layout
+  title="Sitemap - All Pages | Vireonix Technologies"
+  description="Complete sitemap of Vireonix Technologies website. Find all pages including services, industries, case studies, blog articles, and company information."
+>
+  <Header />
+
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary/5 via-white to-secondary/5 py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+          <a href="/" class="hover:text-primary transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-gray-900">Sitemap</span>
+        </nav>
+
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-6">
+            Sitemap
+          </h1>
+          <p class="text-xl text-gray-600">
+            Find all the pages on our website organized by category. Use this page to navigate to any section of our site.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sitemap Content -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {siteStructure.map((section) => (
+            <div>
+              <h2 class="text-xl font-montserrat font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+                {section.title}
+              </h2>
+              <ul class="space-y-3">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors group"
+                    >
+                      <svg class="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="mt-16 pt-12 border-t border-gray-200">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-3xl font-montserrat font-bold text-primary mb-1">30+</div>
+              <div class="text-gray-600">Total Pages</div>
+            </div>
+            <div>
+              <div class="text-3xl font-montserrat font-bold text-primary mb-1">9</div>
+              <div class="text-gray-600">Service Pages</div>
+            </div>
+            <div>
+              <div class="text-3xl font-montserrat font-bold text-primary mb-1">6</div>
+              <div class="text-gray-600">Industry Pages</div>
+            </div>
+            <div>
+              <div class="text-3xl font-montserrat font-bold text-primary mb-1">2+</div>
+              <div class="text-gray-600">Case Studies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- XML Sitemap Reference -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <p class="text-gray-600">
+          Looking for the XML sitemap for search engines?
+          <a href="/sitemap-index.xml" class="text-primary hover:underline ml-1">
+            View XML Sitemap
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vireonixtech.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sitemap",
+        "item": "https://vireonixtech.com/sitemap"
+      }
+    ]
+  })} />
+</Layout>

@@ -1,0 +1,281 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vireonixtech.com" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://vireonixtech.com/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Retail & E-commerce" }
+  ]
+};
+---
+
+<Layout
+  title="Retail & E-commerce Technology Solutions | Vireonix Technologies"
+  description="Transform your retail business with omnichannel commerce, inventory management, AI-powered personalization, and Salesforce Commerce Cloud solutions. PCI-DSS compliant."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-sm text-white/60 mb-8">
+          <a href="/" class="hover:text-white">Home</a>
+          <span>/</span>
+          <a href="/industries" class="hover:text-white">Industries</a>
+          <span>/</span>
+          <span class="text-white">Retail & E-commerce</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="text-6xl mb-6">🛒</div>
+            <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold mb-6">
+              Retail & E-commerce Solutions
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              Transform your retail operations with cutting-edge technology. From omnichannel commerce to AI-powered personalization, we help retailers deliver exceptional customer experiences.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Get Started
+              </a>
+              <a href="/case-studies/retailmax-cloud-migration" class="bg-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
+                View Case Study
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">40+</div>
+              <div class="text-white/80">Retail Clients</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">$2B+</div>
+              <div class="text-white/80">GMV Processed</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">35%</div>
+              <div class="text-white/80">Avg. Sales Increase</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">99.9%</div>
+              <div class="text-white/80">Platform Uptime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Retail Technology Solutions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            End-to-end solutions that connect your online and offline retail operations
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3z" />
+                <path d="M16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">E-commerce Platforms</h3>
+            <p class="text-gray-600 mb-4">Custom e-commerce solutions built for scale. We implement Shopify Plus, Magento, and Salesforce Commerce Cloud.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Headless commerce architecture</li>
+              <li>• Mobile-first design</li>
+              <li>• Multi-currency support</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Omnichannel Integration</h3>
+            <p class="text-gray-600 mb-4">Seamless customer experiences across all channels. Unified inventory, orders, and customer data.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Buy online, pickup in store</li>
+              <li>• Ship from store</li>
+              <li>• Endless aisle solutions</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AI Personalization</h3>
+            <p class="text-gray-600 mb-4">Machine learning-powered product recommendations, dynamic pricing, and personalized marketing.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Product recommendations</li>
+              <li>• Search optimization</li>
+              <li>• Customer segmentation</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+                <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Inventory Management</h3>
+            <p class="text-gray-600 mb-4">Real-time inventory visibility across all locations. Demand forecasting and automated replenishment.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Real-time stock levels</li>
+              <li>• Demand forecasting</li>
+              <li>• Warehouse optimization</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">POS & In-Store Tech</h3>
+            <p class="text-gray-600 mb-4">Modern point of sale systems, mobile checkout, and in-store digital experiences.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Unified POS systems</li>
+              <li>• Mobile checkout apps</li>
+              <li>• Digital signage</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Analytics & BI</h3>
+            <p class="text-gray-600 mb-4">Actionable insights from your retail data. Customer analytics, sales dashboards, and performance reporting.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Customer analytics</li>
+              <li>• Sales performance</li>
+              <li>• Market basket analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commerce Cloud Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+              Salesforce Commerce Cloud Experts
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              As certified Salesforce partners, we deliver world-class Commerce Cloud implementations that drive revenue and customer loyalty.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">B2C Commerce Implementation</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">B2B Commerce Solutions</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">Order Management System</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">Einstein AI Integration</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">PCI-DSS Compliance</h3>
+            <p class="text-gray-600 mb-6">
+              Every e-commerce solution we build meets PCI-DSS requirements to protect customer payment data.
+            </p>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">1</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Secure Payment Processing</h4>
+                  <p class="text-gray-600 text-sm">Tokenization and encryption of card data</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">2</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Fraud Prevention</h4>
+                  <p class="text-gray-600 text-sm">AI-powered fraud detection and prevention</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-primary font-bold">3</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Regular Security Audits</h4>
+                  <p class="text-gray-600 text-sm">Continuous compliance monitoring</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-accent text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Transform Your Retail Business?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Let's discuss how we can help you create exceptional shopping experiences and drive revenue growth.
+        </p>
+        <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          Schedule Retail Consultation
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

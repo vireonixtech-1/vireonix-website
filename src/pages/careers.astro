@@ -1,0 +1,497 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const benefits = [
+  {
+    icon: "health",
+    title: "Health & Wellness",
+    description: "Comprehensive medical, dental, and vision coverage for you and your family"
+  },
+  {
+    icon: "remote",
+    title: "Remote Flexibility",
+    description: "Work from anywhere with flexible hours and unlimited PTO"
+  },
+  {
+    icon: "growth",
+    title: "Learning & Development",
+    description: "$5,000 annual learning budget for courses, certifications, and conferences"
+  },
+  {
+    icon: "equity",
+    title: "Competitive Compensation",
+    description: "Top-tier salaries, performance bonuses, and equity opportunities"
+  },
+  {
+    icon: "retirement",
+    title: "401(k) Matching",
+    description: "Generous 401(k) matching up to 6% with immediate vesting"
+  },
+  {
+    icon: "parental",
+    title: "Parental Leave",
+    description: "16 weeks paid parental leave for all new parents"
+  }
+];
+
+const openings = [
+  {
+    id: "senior-react-developer",
+    title: "Senior React Developer",
+    department: "Engineering",
+    location: "Remote (US)",
+    type: "Full-time",
+    experience: "5+ years",
+    description: "We're looking for a Senior React Developer to build scalable web applications for enterprise clients. You'll work with modern technologies and collaborate with cross-functional teams.",
+    requirements: [
+      "5+ years of React.js development experience",
+      "Strong TypeScript and modern JavaScript skills",
+      "Experience with state management (Redux, Zustand)",
+      "Familiarity with testing frameworks (Jest, Cypress)",
+      "Excellent communication skills"
+    ]
+  },
+  {
+    id: "salesforce-architect",
+    title: "Salesforce Technical Architect",
+    department: "Salesforce Practice",
+    location: "Remote (US) / Hybrid (Atlanta)",
+    type: "Full-time",
+    experience: "7+ years",
+    description: "Lead complex Salesforce implementations and architect scalable solutions for enterprise clients. Drive technical strategy and mentor junior team members.",
+    requirements: [
+      "7+ years of Salesforce experience with architecture focus",
+      "Salesforce Technical Architect certification required",
+      "Experience with Sales Cloud, Service Cloud, and integrations",
+      "Strong understanding of Apex, LWC, and Salesforce APIs",
+      "Excellent client-facing and leadership skills"
+    ]
+  },
+  {
+    id: "ai-ml-engineer",
+    title: "AI/ML Engineer",
+    department: "AI & Innovation",
+    location: "Remote (US)",
+    type: "Full-time",
+    experience: "4+ years",
+    description: "Join our AI team to build and deploy machine learning models and generative AI solutions for enterprise clients. Work with cutting-edge technologies like GPT-4, Claude, and custom models.",
+    requirements: [
+      "4+ years in machine learning and AI development",
+      "Proficiency in Python, TensorFlow, and PyTorch",
+      "Experience with LLMs and generative AI integration",
+      "Strong understanding of MLOps and model deployment",
+      "Background in NLP or computer vision preferred"
+    ]
+  },
+  {
+    id: "cloud-solutions-architect",
+    title: "Cloud Solutions Architect",
+    department: "Cloud Practice",
+    location: "Remote (US) / Hybrid (Atlanta)",
+    type: "Full-time",
+    experience: "6+ years",
+    description: "Design and implement cloud solutions on AWS, Azure, and GCP. Lead cloud migration projects and help clients optimize their cloud infrastructure.",
+    requirements: [
+      "6+ years of cloud architecture experience",
+      "AWS Solutions Architect Professional or equivalent certification",
+      "Experience with multi-cloud environments",
+      "Strong knowledge of IaC (Terraform, CloudFormation)",
+      "Track record of successful enterprise migrations"
+    ]
+  },
+  {
+    id: "senior-ios-developer",
+    title: "Senior iOS Developer",
+    department: "Mobile Engineering",
+    location: "Remote (US)",
+    type: "Full-time",
+    experience: "5+ years",
+    description: "Build beautiful, performant iOS applications for enterprise clients. Work with SwiftUI, UIKit, and modern iOS frameworks.",
+    requirements: [
+      "5+ years of iOS development with Swift",
+      "Strong SwiftUI and UIKit experience",
+      "Experience with Core Data, networking, and security",
+      "Published apps on the App Store",
+      "Familiarity with CI/CD for mobile apps"
+    ]
+  },
+  {
+    id: "devops-engineer",
+    title: "DevOps Engineer",
+    department: "Platform Engineering",
+    location: "Remote (US)",
+    type: "Full-time",
+    experience: "4+ years",
+    description: "Build and maintain CI/CD pipelines, infrastructure, and developer tools. Help teams ship faster with reliable automation.",
+    requirements: [
+      "4+ years of DevOps/SRE experience",
+      "Expertise in Kubernetes and container orchestration",
+      "Experience with CI/CD tools (Jenkins, GitLab CI, GitHub Actions)",
+      "Strong scripting skills (Python, Bash)",
+      "AWS or Azure certification preferred"
+    ]
+  },
+  {
+    id: "ux-designer",
+    title: "Senior UX Designer",
+    department: "Design",
+    location: "Remote (US)",
+    type: "Full-time",
+    experience: "5+ years",
+    description: "Lead UX design for enterprise applications and mobile apps. Conduct user research, create wireframes, and deliver polished designs.",
+    requirements: [
+      "5+ years of UX design experience",
+      "Proficiency in Figma and design systems",
+      "Strong portfolio demonstrating enterprise or B2B work",
+      "Experience with user research and usability testing",
+      "Excellent collaboration and presentation skills"
+    ]
+  },
+  {
+    id: "project-manager",
+    title: "Technical Project Manager",
+    department: "Delivery",
+    location: "Remote (US) / Hybrid (Atlanta)",
+    type: "Full-time",
+    experience: "5+ years",
+    description: "Lead software development projects from inception to delivery. Coordinate cross-functional teams and ensure successful outcomes for clients.",
+    requirements: [
+      "5+ years of technical project management",
+      "PMP or Scrum Master certification preferred",
+      "Experience managing software development projects",
+      "Strong understanding of Agile methodologies",
+      "Excellent stakeholder management skills"
+    ]
+  }
+];
+
+const values = [
+  {
+    title: "Innovation First",
+    description: "We embrace new technologies and approaches to solve complex problems."
+  },
+  {
+    title: "Client Success",
+    description: "Our clients' success is our success. We go above and beyond to deliver value."
+  },
+  {
+    title: "Continuous Learning",
+    description: "We invest in our team's growth and encourage exploration and experimentation."
+  },
+  {
+    title: "Integrity Always",
+    description: "We do the right thing, even when no one is watching."
+  }
+];
+---
+
+<Layout
+  title="Careers - Join Our Team | Vireonix Technologies"
+  description="Join Vireonix Technologies and work on cutting-edge enterprise technology projects. Explore open positions in engineering, Salesforce, AI/ML, cloud, design, and more. Remote-friendly with great benefits."
+>
+  <Header />
+
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary via-primary/90 to-secondary py-20 md:py-32 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <nav class="flex items-center space-x-2 text-sm text-white/70 mb-8">
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-white">Careers</span>
+        </nav>
+
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-6xl font-montserrat font-extrabold text-white mb-6">
+            Build the Future with Us
+          </h1>
+          <p class="text-xl md:text-2xl text-white/90 mb-8">
+            Join a team of 450+ technologists working on enterprise solutions that impact millions of users worldwide.
+          </p>
+          <a href="#openings" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+            View Open Positions
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-4xl font-montserrat font-bold text-primary mb-2">450+</div>
+            <div class="text-gray-600">Team Members</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-montserrat font-bold text-primary mb-2">50+</div>
+            <div class="text-gray-600">Countries</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-montserrat font-bold text-primary mb-2">25+</div>
+            <div class="text-gray-600">Years in Business</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-montserrat font-bold text-primary mb-2">95%</div>
+            <div class="text-gray-600">Employee Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Our Values
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            The principles that guide how we work and grow together
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value) => (
+            <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Benefits & Perks
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            We invest in our team's wellbeing and growth
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {benefits.map((benefit) => (
+            <div class="flex gap-4 p-6 rounded-2xl bg-gray-50 hover:bg-primary/5 transition-colors">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                {benefit.icon === "health" && (
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                )}
+                {benefit.icon === "remote" && (
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                )}
+                {benefit.icon === "growth" && (
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                )}
+                {benefit.icon === "equity" && (
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                )}
+                {benefit.icon === "retirement" && (
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )}
+                {benefit.icon === "parental" && (
+                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">{benefit.title}</h3>
+                <p class="text-gray-600 text-sm">{benefit.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section id="openings" class="py-16 md:py-24 bg-gray-50 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Open Positions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Find your next opportunity and grow your career with us
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {openings.map((job) => (
+            <details class="group bg-white rounded-2xl border border-gray-200 hover:border-primary/30 transition-all overflow-hidden">
+              <summary class="flex flex-col md:flex-row md:items-center justify-between cursor-pointer p-6 list-none gap-4">
+                <div class="flex-1">
+                  <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors mb-2 md:mb-0">
+                    {job.title}
+                  </h3>
+                  <div class="flex flex-wrap gap-3 mt-2">
+                    <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                      {job.department}
+                    </span>
+                    <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      {job.location}
+                    </span>
+                    <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {job.type}
+                    </span>
+                    <span class="inline-flex items-center gap-1 text-sm text-gray-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                      {job.experience}
+                    </span>
+                  </div>
+                </div>
+                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-100 group-hover:bg-primary/10 flex items-center justify-center transition-colors">
+                  <svg class="w-5 h-5 text-gray-500 group-hover:text-primary group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 border-t border-gray-100 pt-6">
+                <p class="text-gray-600 mb-6">{job.description}</p>
+                <h4 class="font-semibold text-gray-900 mb-3">Requirements:</h4>
+                <ul class="space-y-2 mb-6">
+                  {job.requirements.map((req) => (
+                    <li class="flex items-start gap-2 text-gray-600">
+                      <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {req}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`mailto:hr@vireonixtech.com?subject=Application for ${job.title}&body=Hi,%0D%0A%0D%0AI am interested in the ${job.title} position at Vireonix Technologies.%0D%0A%0D%0APlease find my resume attached.%0D%0A%0D%0ABest regards`}
+                  class="inline-flex items-center gap-2 bg-button-gradient text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                >
+                  Apply Now
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Don't See a Fit CTA -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+          Don't See the Right Fit?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
+        </p>
+        <a
+          href="mailto:hr@vireonixtech.com?subject=General Application&body=Hi,%0D%0A%0D%0AI am interested in opportunities at Vireonix Technologies.%0D%0A%0D%0APlease find my resume attached.%0D%0A%0D%0ABest regards"
+          class="inline-flex items-center gap-2 bg-button-gradient text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+        >
+          Send Your Resume
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- JobPosting Schema for each job -->
+  <script type="application/ld+json" set:html={JSON.stringify(openings.map(job => ({
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": job.title,
+    "description": job.description + " Requirements: " + job.requirements.join(", "),
+    "datePosted": "2025-01-01",
+    "validThrough": "2025-12-31",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Vireonix Technologies LLC",
+      "sameAs": "https://vireonixtech.com",
+      "logo": "https://vireonixtech.com/Untitled design.png"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cumming",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      }
+    },
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "United States"
+    }
+  })))} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vireonixtech.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Careers",
+        "item": "https://vireonixtech.com/careers"
+      }
+    ]
+  })} />
+</Layout>
+
+<style>
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

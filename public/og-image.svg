@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="100" r="200" fill="white" fill-opacity="0.05"/>
+  <circle cx="100" cy="530" r="150" fill="white" fill-opacity="0.05"/>
+
+  <!-- Company name -->
+  <text x="100" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="white">
+    Vireonix Technologies
+  </text>
+
+  <!-- Tagline -->
+  <text x="100" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="white" fill-opacity="0.9">
+    Enterprise Software Development &amp; Digital Transformation
+  </text>
+
+  <!-- Accent line -->
+  <rect x="100" y="380" width="200" height="6" rx="3" fill="url(#accentGradient)"/>
+
+  <!-- Services tags -->
+  <text x="100" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="white" fill-opacity="0.7">
+    Web Development  |  Mobile Apps  |  Cloud Migration  |  AI Solutions
+  </text>
+
+  <!-- Website URL -->
+  <text x="100" y="550" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="white" fill-opacity="0.6">
+    vireonixtech.com
+  </text>
+</svg>

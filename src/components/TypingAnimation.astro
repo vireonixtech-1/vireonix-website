@@ -1,0 +1,269 @@
+---
+---
+
+<section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-6">
+        We Are Your Trusted
+      </h2>
+      
+      <!-- Typing Animation Container -->
+      <div class="relative inline-block">
+        <span class="text-4xl md:text-5xl font-montserrat font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+          <span id="typed-text" class="typing-text"></span>
+          <span id="cursor" class="cursor">|</span>
+        </span>
+      </div>
+      
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-8">
+        Delivering exceptional technology solutions with innovation, expertise, and dedication to your success.
+      </p>
+    </div>
+    
+    <!-- Feature Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+      <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Reliable Solutions</h3>
+        <p class="text-gray-600">Dependable technology solutions you can trust</p>
+      </div>
+      
+      <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Expert Team</h3>
+        <p class="text-gray-600">Skilled professionals dedicated to excellence</p>
+      </div>
+      
+      <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation Focus</h3>
+        <p class="text-gray-600">Cutting-edge solutions for modern challenges</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background Decoration -->
+  <div class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl"></div>
+  <div class="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-2xl"></div>
+</section>
+
+<style>
+  /* ===== TYPING ANIMATION STYLES ===== */
+  
+  .typing-text {
+    /* Ensure consistent spacing for text changes */
+    display: inline-block;
+    min-width: 200px;
+    text-align: left;
+  }
+  
+  /* Cursor Animation */
+  .cursor {
+    display: inline-block;
+    background-color: currentColor;
+    margin-left: 2px;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+  
+  /* Blinking cursor keyframes */
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Typing animation class for smooth character appearance */
+  .typing {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  /* Responsive text sizing */
+  @media (max-width: 768px) {
+    .typing-text {
+      min-width: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .typing-text {
+      min-width: 120px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ===== TYPING ANIMATION CONFIGURATION =====
+    
+    // Array of words/phrases to cycle through
+    const words = [
+      'Technology Partner',
+      'Development Team',
+      'Innovation Catalyst',
+      'Digital Architect',
+      'Solution Provider'
+    ];
+    
+    // Animation timing configuration
+    const config = {
+      typeSpeed: 100,        // Speed of typing (milliseconds per character)
+      deleteSpeed: 50,       // Speed of deleting (milliseconds per character)
+      pauseTime: 2000,       // Pause time after completing a word (milliseconds)
+      deleteDelay: 1000      // Delay before starting to delete (milliseconds)
+    };
+    
+    // Get DOM elements
+    const typedTextElement = document.getElementById('typed-text');
+    const cursorElement = document.getElementById('cursor');
+    
+    // Animation state variables
+    let currentWordIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let isWaiting = false;
+    
+    // ===== MAIN TYPING ANIMATION FUNCTION =====
+    function typeAnimation() {
+      // Get current word to type
+      const currentWord = words[currentWordIndex];
+      
+      // Handle typing phase
+      if (!isDeleting && !isWaiting) {
+        // Add next character
+        if (currentCharIndex < currentWord.length) {
+          typedTextElement.textContent = currentWord.substring(0, currentCharIndex + 1);
+          currentCharIndex++;
+          setTimeout(typeAnimation, config.typeSpeed);
+        } else {
+          // Word is complete, start waiting phase
+          isWaiting = true;
+          setTimeout(() => {
+            isWaiting = false;
+            isDeleting = true;
+            typeAnimation();
+          }, config.pauseTime);
+        }
+      }
+      // Handle deleting phase
+      else if (isDeleting && !isWaiting) {
+        // Remove last character
+        if (currentCharIndex > 0) {
+          typedTextElement.textContent = currentWord.substring(0, currentCharIndex - 1);
+          currentCharIndex--;
+          setTimeout(typeAnimation, config.deleteSpeed);
+        } else {
+          // Word is fully deleted, move to next word
+          isDeleting = false;
+          currentWordIndex = (currentWordIndex + 1) % words.length;
+          
+          // Small delay before starting next word
+          setTimeout(typeAnimation, config.deleteDelay);
+        }
+      }
+    }
+    
+    // ===== CURSOR MANAGEMENT =====
+    function manageCursor() {
+      // Show cursor during typing and deleting
+      if (cursorElement) {
+        cursorElement.style.display = 'inline-block';
+      }
+    }
+    
+    // ===== RESPONSIVE BEHAVIOR =====
+    function handleResize() {
+      // Adjust typing speed based on screen size for better mobile experience
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        config.typeSpeed = 120;  // Slightly slower on mobile
+        config.deleteSpeed = 60;
+      } else {
+        config.typeSpeed = 100;  // Normal speed on desktop
+        config.deleteSpeed = 50;
+      }
+    }
+    
+    // ===== INITIALIZATION =====
+    function initializeTypingAnimation() {
+      // Ensure elements exist before starting
+      if (!typedTextElement || !cursorElement) {
+        console.error('Typing animation elements not found');
+        return;
+      }
+      
+      // Set initial state
+      typedTextElement.textContent = '';
+      manageCursor();
+      handleResize();
+      
+      // Start the animation with a small delay
+      setTimeout(typeAnimation, 500);
+    }
+    
+    // ===== EVENT LISTENERS =====
+    
+    // Handle window resize for responsive behavior
+    window.addEventListener('resize', handleResize);
+    
+    // Handle visibility change to pause/resume animation when tab is not visible
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        // Pause animation when tab is not visible (optional optimization)
+        // You could implement pause/resume logic here if needed
+      }
+    });
+    
+    // ===== START ANIMATION =====
+    initializeTypingAnimation();
+    
+    // ===== ACCESSIBILITY ENHANCEMENTS =====
+    
+    // Respect user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
+    if (prefersReducedMotion.matches) {
+      // If user prefers reduced motion, show static text instead
+      if (typedTextElement) {
+        typedTextElement.textContent = words[0];
+        if (cursorElement) {
+          cursorElement.style.display = 'none';
+        }
+      }
+    }
+    
+    // Listen for changes in motion preference
+    prefersReducedMotion.addEventListener('change', function() {
+      if (this.matches) {
+        // Stop animation and show static text
+        if (typedTextElement) {
+          typedTextElement.textContent = words[0];
+        }
+        if (cursorElement) {
+          cursorElement.style.display = 'none';
+        }
+      } else {
+        // Restart animation
+        initializeTypingAnimation();
+      }
+    });
+  });
+</script>

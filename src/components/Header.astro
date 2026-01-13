@@ -1,0 +1,112 @@
+---
+---
+
+<header class="fixed top-4 left-4 right-4 z-50">
+  <nav class="max-w-7xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+          <img 
+            src="/Untitled design.png" 
+            alt="Vireonix Technologies LLC" 
+            class="h-12 w-auto"
+          />
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-6">
+          <a href="/#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Services</a>
+          <a href="/industries" class="text-gray-700 hover:text-primary transition-colors font-medium">Industries</a>
+          <a href="/case-studies" class="text-gray-700 hover:text-primary transition-colors font-medium">Case Studies</a>
+          <a href="/blog" class="text-gray-700 hover:text-primary transition-colors font-medium">Blog</a>
+          <a href="/about" class="text-gray-700 hover:text-primary transition-colors font-medium">About</a>
+          <a href="/#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact</a>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a href="#contact" class="bg-button-gradient text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300">
+          Get Started
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-button relative w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary focus:outline-none transition-colors" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line absolute w-6 h-0.5 bg-current transform transition-all duration-300 -translate-y-2"></span>
+          <span class="hamburger-line absolute w-6 h-0.5 bg-current transform transition-all duration-300"></span>
+          <span class="hamburger-line absolute w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-2"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu md:hidden bg-white rounded-b-2xl shadow-lg border-t border-gray-100">
+      <div class="px-4 pt-2 pb-4 space-y-1">
+        <a href="/#services" class="mobile-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">Services</a>
+        <a href="/industries" class="mobile-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">Industries</a>
+        <a href="/case-studies" class="mobile-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">Case Studies</a>
+        <a href="/blog" class="mobile-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">Blog</a>
+        <a href="/about" class="mobile-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">About</a>
+        <a href="/#contact" class="mobile-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200">Contact</a>
+        <a href="/#contact" class="block mx-3 mt-4 bg-button-gradient text-white px-6 py-3 rounded-full font-medium text-center btn-shine hover:shadow-lg transition-all duration-300">
+          Get Started
+        </a>
+      </div>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburgerLines = mobileMenuButton?.querySelectorAll('.hamburger-line');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.contains('menu-open');
+
+        if (isOpen) {
+          mobileMenu.classList.remove('menu-open');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          // Animate hamburger back
+          if (hamburgerLines) {
+            hamburgerLines[0].style.transform = 'translateY(-8px) rotate(0deg)';
+            hamburgerLines[1].style.opacity = '1';
+            hamburgerLines[2].style.transform = 'translateY(8px) rotate(0deg)';
+          }
+        } else {
+          mobileMenu.classList.add('menu-open');
+          mobileMenuButton.setAttribute('aria-expanded', 'true');
+          // Animate hamburger to X
+          if (hamburgerLines) {
+            hamburgerLines[0].style.transform = 'translateY(0) rotate(45deg)';
+            hamburgerLines[1].style.opacity = '0';
+            hamburgerLines[2].style.transform = 'translateY(0) rotate(-45deg)';
+          }
+        }
+      });
+
+      // Close menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('menu-open');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          if (hamburgerLines) {
+            hamburgerLines[0].style.transform = 'translateY(-8px) rotate(0deg)';
+            hamburgerLines[1].style.opacity = '1';
+            hamburgerLines[2].style.transform = 'translateY(8px) rotate(0deg)';
+          }
+        });
+      });
+    }
+  });
+</script>

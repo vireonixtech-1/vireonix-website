@@ -1,0 +1,406 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+	ogImage?: string;
+}
+
+const {
+	title = "Vireonix Technologies - Enterprise Technology Solutions | 25+ Years Experience",
+	description = "Vireonix Technologies LLC delivers enterprise software development, cloud migration, Salesforce solutions, and AI integration. ISO 27001 & SOC 2 certified. Serving 300+ clients in 50+ countries since 1999.",
+	ogImage = "/og-image.svg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://vireonixtech.com');
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/Untitled design.png" />
+		<link rel="apple-touch-icon" href="/Untitled design.png" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, Astro.site || 'https://vireonixtech.com')} />
+		<meta property="og:site_name" content="Vireonix Technologies LLC" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, Astro.site || 'https://vireonixtech.com')} />
+
+		<!-- Additional SEO -->
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="author" content="Vireonix Technologies LLC" />
+		<meta name="keywords" content="software development, mobile app development, Salesforce consulting, cloud migration, AI solutions, cybersecurity, enterprise technology, Georgia tech company" />
+		<meta name="geo.region" content="US-GA" />
+		<meta name="geo.placename" content="Cumming, Georgia" />
+		<meta name="geo.position" content="34.2079;-84.1402" />
+		<meta name="ICBM" content="34.2079, -84.1402" />
+
+		<!-- Hreflang for International SEO -->
+		<link rel="alternate" hreflang="en" href={canonicalURL} />
+		<link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
+		<!-- Organization Schema (JSON-LD) -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Vireonix Technologies LLC",
+			"alternateName": "Vireonix Technologies",
+			"url": "https://vireonixtech.com",
+			"logo": "https://vireonixtech.com/Untitled design.png",
+			"description": "Enterprise technology consulting firm specializing in mobile development, Salesforce solutions, cloud migration, and AI integration since 1999.",
+			"foundingDate": "1999",
+			"numberOfEmployees": {
+				"@type": "QuantitativeValue",
+				"minValue": 450
+			},
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "670 Calvet Way",
+				"addressLocality": "Cumming",
+				"addressRegion": "GA",
+				"postalCode": "30041",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 34.2079,
+				"longitude": -84.1402
+			},
+			"contactPoint": [
+				{
+					"@type": "ContactPoint",
+					"telephone": "+1-304-216-9092",
+					"contactType": "sales",
+					"email": "hr@vireonixtech.com",
+					"availableLanguage": "English"
+				}
+			],
+			"sameAs": [
+				"https://www.linkedin.com/company/vireonixtechnologies"
+			],
+			"hasCredential": [
+				{
+					"@type": "EducationalOccupationalCredential",
+					"credentialCategory": "certification",
+					"name": "ISO 27001 Certified"
+				},
+				{
+					"@type": "EducationalOccupationalCredential",
+					"credentialCategory": "certification",
+					"name": "SOC 2 Type II Certified"
+				}
+			],
+			"knowsAbout": [
+				"Mobile App Development",
+				"Web Development",
+				"Salesforce Solutions",
+				"Generative AI",
+				"Cloud Migration",
+				"Cybersecurity",
+				"UI/UX Design",
+				"Database Security"
+			],
+			"areaServed": {
+				"@type": "Place",
+				"name": "Worldwide"
+			}
+		}
+		</script>
+
+		<!-- LocalBusiness Schema -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Vireonix Technologies LLC",
+			"image": "https://vireonixtech.com/Untitled design.png",
+			"priceRange": "$$$",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "670 Calvet Way",
+				"addressLocality": "Cumming",
+				"addressRegion": "GA",
+				"postalCode": "30041",
+				"addressCountry": "US"
+			},
+			"telephone": "+1-304-216-9092",
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+					"opens": "09:00",
+					"closes": "18:00"
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "Saturday",
+					"opens": "10:00",
+					"closes": "16:00"
+				}
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.9",
+				"reviewCount": "300"
+			}
+		}
+		</script>
+
+		<!-- WebSite Schema with SearchAction (for Sitelinks Search Box) -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Vireonix Technologies",
+			"alternateName": ["Vireonix", "Vireonix Tech"],
+			"url": "https://vireonixtech.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": {
+					"@type": "EntryPoint",
+					"urlTemplate": "https://vireonixtech.com/sitemap?q={search_term_string}"
+				},
+				"query-input": "required name=search_term_string"
+			}
+		}
+		</script>
+
+		<!-- Speakable Schema for Voice Search (AEO) -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Vireonix Technologies - Enterprise Technology Solutions",
+			"speakable": {
+				"@type": "SpeakableSpecification",
+				"cssSelector": ["h1", ".hero-description", ".service-description"]
+			},
+			"mainEntity": {
+				"@type": "Organization",
+				"name": "Vireonix Technologies LLC"
+			}
+		}
+		</script>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+		<!-- EmailJS SDK -->
+		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+
+		<!-- Scripts -->
+		<script src="/scripts/animations.js" defer></script>
+	</head>
+	<body class="font-inter bg-light text-gray-900 overflow-x-hidden">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100vh;
+	}
+
+	/* Scroll-triggered reveal animations */
+	.reveal-up,
+	.reveal-left,
+	.reveal-right,
+	.reveal-scale,
+	.reveal-fade,
+	.stagger-item {
+		opacity: 0;
+		transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.reveal-up {
+		transform: translateY(60px);
+	}
+
+	.reveal-left {
+		transform: translateX(-60px);
+	}
+
+	.reveal-right {
+		transform: translateX(60px);
+	}
+
+	.reveal-scale {
+		transform: scale(0.9);
+	}
+
+	.reveal-fade {
+		opacity: 0;
+	}
+
+	.stagger-item {
+		transform: translateY(30px);
+	}
+
+	/* Revealed states */
+	.revealed,
+	.stagger-item.revealed {
+		opacity: 1;
+		transform: translateY(0) translateX(0) scale(1);
+	}
+
+	/* Hero animations */
+	.hero-animate {
+		opacity: 0;
+		transform: translateY(30px);
+		transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.hero-animate.hero-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Gradient text animation */
+	.animate-gradient-text {
+		background-size: 200% auto;
+		animation: gradient-shift 3s ease infinite;
+	}
+
+	@keyframes gradient-shift {
+		0%, 100% { background-position: 0% center; }
+		50% { background-position: 100% center; }
+	}
+
+	/* Card hover lift effect */
+	.hover-lift {
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+	}
+
+	.hover-lift:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+	}
+
+	/* Smooth icon scaling */
+	.icon-bounce {
+		transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	.group:hover .icon-bounce {
+		transform: scale(1.15);
+	}
+
+	/* Mobile menu animation */
+	.mobile-menu {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.4s ease, opacity 0.3s ease;
+		opacity: 0;
+	}
+
+	.mobile-menu.menu-open {
+		max-height: 400px;
+		opacity: 1;
+	}
+
+	/* Button shine effect */
+	.btn-shine {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.btn-shine::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+		transition: left 0.5s;
+	}
+
+	.btn-shine:hover::before {
+		left: 100%;
+	}
+
+	/* Smooth underline animation for links */
+	.link-underline {
+		position: relative;
+	}
+
+	.link-underline::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: currentColor;
+		transition: width 0.3s ease;
+	}
+
+	.link-underline:hover::after {
+		width: 100%;
+	}
+
+	/* Pulse ring animation */
+	.pulse-ring {
+		animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+
+	@keyframes pulse-ring {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.5; }
+	}
+
+	/* Counter animation styles */
+	.counter-value {
+		display: inline-block;
+		min-width: 2ch;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		.reveal-up,
+		.reveal-left,
+		.reveal-right,
+		.reveal-scale,
+		.reveal-fade,
+		.stagger-item,
+		.hero-animate {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			opacity: 1 !important;
+			transform: none !important;
+		}
+	}
+</style>

@@ -1,0 +1,128 @@
+# Robots.txt for Vireonix Technologies LLC
+# https://vireonixtech.com
+
+# ===========================================
+# STANDARD SEARCH ENGINE CRAWLERS
+# ===========================================
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Googlebot (Google Search)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bingbot (Bing Search)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# ===========================================
+# AI & GENERATIVE ENGINE CRAWLERS (GEO)
+# ===========================================
+
+# Google AI (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI GPTBot (ChatGPT, SearchGPT)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI ChatGPT User
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Amazon AI
+User-agent: Amazonbot
+Allow: /
+
+# Apple AI (Applebot for Siri/Apple Intelligence)
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: bingbot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# CC Crawlers (for AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# Common Crawl
+User-agent: commoncrawl
+Allow: /
+
+# ===========================================
+# SOCIAL MEDIA CRAWLERS
+# ===========================================
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# ===========================================
+# SITEMAP LOCATIONS
+# ===========================================
+
+Sitemap: https://vireonixtech.com/sitemap-index.xml
+Sitemap: https://vireonixtech.com/sitemap-0.xml
+
+# ===========================================
+# BLOCKED PATHS (if any)
+# ===========================================
+
+# Block admin or private paths if they exist
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_astro/
+Disallow: /api/
+
+# ===========================================
+# NOTES
+# ===========================================
+# This robots.txt is optimized for:
+# - Traditional SEO (Google, Bing)
+# - Generative Engine Optimization (GEO)
+# - Answer Engine Optimization (AEO)
+# - AI Training & Retrieval Systems
+#
+# Last updated: 2025-01-11

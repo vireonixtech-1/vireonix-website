@@ -1,0 +1,418 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  serviceName: string;
+  serviceTagline: string;
+  heroIcon: string;
+  gradientFrom: string;
+  gradientTo: string;
+  features: Array<{
+    title: string;
+    description: string;
+    icon: string;
+  }>;
+  technologies: string[];
+  benefits: Array<{
+    stat: string;
+    label: string;
+  }>;
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+  relatedServices: Array<{
+    name: string;
+    href: string;
+  }>;
+}
+
+const {
+  title,
+  description,
+  serviceName,
+  serviceTagline,
+  heroIcon,
+  gradientFrom,
+  gradientTo,
+  features,
+  technologies,
+  benefits,
+  faqs,
+  relatedServices
+} = Astro.props;
+
+// Generate Service Schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": serviceName,
+  "description": description,
+  "provider": {
+    "@type": "Organization",
+    "name": "Vireonix Technologies LLC",
+    "url": "https://vireonixtech.com"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": serviceName,
+    "itemListElement": features.map((feature, index) => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": feature.title,
+        "description": feature.description
+      }
+    }))
+  }
+};
+
+// Generate FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+// Generate BreadcrumbList Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vireonixtech.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://vireonixtech.com/#services" },
+    { "@type": "ListItem", "position": 3, "name": serviceName }
+  ]
+};
+
+// Generate HowTo Schema for Process (AEO optimization)
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": `How Vireonix Delivers ${serviceName}`,
+  "description": `Our proven 4-step process for delivering exceptional ${serviceName.toLowerCase()} services.`,
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Discovery",
+      "text": "Understanding your requirements and business goals through in-depth consultations and analysis."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Strategy",
+      "text": "Creating a detailed roadmap and technical architecture tailored to your specific needs."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Development",
+      "text": "Agile development with regular updates, feedback cycles, and quality assurance."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Delivery",
+      "text": "Comprehensive testing, deployment, training, and ongoing support for long-term success."
+    }
+  ],
+  "totalTime": "P4W"
+};
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class={`relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-${gradientFrom} to-${gradientTo} overflow-hidden pt-24`}>
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="absolute inset-0">
+        <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto">
+          <!-- Icon -->
+          <div class="w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-8">
+            <Fragment set:html={heroIcon} />
+          </div>
+
+          <!-- Breadcrumb -->
+          <nav class="flex justify-center mb-6 text-white/80 text-sm">
+            <a href="/" class="hover:text-white">Home</a>
+            <span class="mx-2">/</span>
+            <a href="/#services" class="hover:text-white">Services</a>
+            <span class="mx-2">/</span>
+            <span class="text-white">{serviceName}</span>
+          </nav>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-montserrat font-extrabold text-white mb-6 leading-tight">
+            {serviceName}
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            {serviceTagline}
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
+              Get Free Consultation
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#features" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Stats -->
+    <section class="py-16 bg-white border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {benefits.map(benefit => (
+            <div class="text-center">
+              <div class="text-4xl md:text-5xl font-montserrat font-extrabold text-primary mb-2">{benefit.stat}</div>
+              <div class="text-gray-600">{benefit.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Slot -->
+    <slot />
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-4">
+            What We Offer
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive {serviceName.toLowerCase()} services tailored to your business needs
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map(feature => (
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center mb-6">
+                <Fragment set:html={feature.icon} />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Technologies We Use
+          </h2>
+          <p class="text-lg text-gray-600">
+            Industry-leading tools and frameworks for optimal results
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          {technologies.map(tech => (
+            <span class="px-6 py-3 bg-gray-100 text-gray-800 rounded-full font-medium hover:bg-primary hover:text-white transition-colors duration-300">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-dark text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-montserrat font-extrabold mb-4">
+            Our Process
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            A proven methodology that delivers results
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">1</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2">Discovery</h3>
+            <p class="text-gray-400 text-sm">Understanding your requirements and business goals</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-accent">2</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2">Strategy</h3>
+            <p class="text-gray-400 text-sm">Creating a detailed roadmap and technical architecture</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-secondary">3</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2">Development</h3>
+            <p class="text-gray-400 text-sm">Agile development with regular updates and feedback</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-green-400">4</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2">Delivery</h3>
+            <p class="text-gray-400 text-sm">Testing, deployment, and ongoing support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-lg text-gray-600">
+            Common questions about our {serviceName.toLowerCase()} services
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map((faq, index) => (
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <button
+                class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                aria-expanded="false"
+              >
+                <span class="text-lg font-semibold text-gray-900">{faq.question}</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="faq-content hidden px-6 pb-5">
+                <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Related Services</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          {relatedServices.map(service => (
+            <a href={service.href} class="px-6 py-3 bg-gray-100 text-gray-800 rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300">
+              {service.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary to-accent">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-montserrat font-extrabold text-white mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Let's discuss how our {serviceName.toLowerCase()} services can help transform your business.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2">
+            Schedule a Call
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+          </a>
+          <a href="mailto:hr@vireonixtech.com" class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300">
+            Email Us
+          </a>
+        </div>
+        <p class="text-white/70 mt-6 text-sm">
+          Or call us directly: <a href="tel:+13042169092" class="text-white hover:underline">+1 (304) 216-9092</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <!-- Service Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- HowTo Schema (AEO) -->
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-trigger');
+
+    faqItems.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling;
+        const icon = trigger.querySelector('.faq-icon');
+        const isOpen = !content?.classList.contains('hidden');
+
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+        // Toggle current
+        if (!isOpen && content) {
+          content.classList.remove('hidden');
+          icon?.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-icon.rotate-180 {
+    transform: rotate(180deg);
+  }
+</style>

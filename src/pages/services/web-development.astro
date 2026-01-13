@@ -1,0 +1,124 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Web Development Services | React, Angular, Node.js | Vireonix Technologies",
+  description: "Professional web development services. Custom web applications, enterprise portals, e-commerce solutions. React, Angular, Vue, Node.js experts. Get a free quote.",
+  serviceName: "Web Development",
+  serviceTagline: "Build powerful, scalable web applications that drive business growth. Modern frameworks, exceptional performance, enterprise-grade security.",
+  heroIcon: `<svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>`,
+  gradientFrom: "accent",
+  gradientTo: "secondary",
+  features: [
+    {
+      title: "Custom Web Applications",
+      description: "Tailored web applications built from scratch to meet your unique business requirements with scalable architecture.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Enterprise Portals",
+      description: "Secure, feature-rich portals for employees, partners, and customers with role-based access and integrations.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "E-Commerce Solutions",
+      description: "High-converting online stores with seamless checkout, inventory management, and payment gateway integration.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Progressive Web Apps",
+      description: "PWAs that combine web and mobile app benefits - offline functionality, push notifications, and app-like experience.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "API Development",
+      description: "RESTful and GraphQL APIs designed for performance, security, and seamless third-party integrations.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Performance Optimization",
+      description: "Core Web Vitals optimization, lazy loading, caching strategies, and CDN implementation for lightning-fast sites.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    }
+  ],
+  technologies: ["React", "Angular", "Vue.js", "Next.js", "Node.js", "Express", "NestJS", "TypeScript", "PostgreSQL", "MongoDB", "Redis", "GraphQL", "Docker", "AWS", "Tailwind CSS"],
+  benefits: [
+    { stat: "500+", label: "Web Projects" },
+    { stat: "99.9%", label: "Uptime SLA" },
+    { stat: "<1s", label: "Avg. Load Time" },
+    { stat: "25+", label: "Years Experience" }
+  ],
+  faqs: [
+    {
+      question: "What web technologies do you specialize in?",
+      answer: "We specialize in modern JavaScript frameworks including React, Angular, Vue.js, and Next.js for frontend. For backend, we use Node.js, Express, NestJS, and integrate with various databases like PostgreSQL, MongoDB, and Redis. We choose the tech stack based on your project requirements."
+    },
+    {
+      question: "How do you ensure website security?",
+      answer: "We implement multiple security layers: SSL/TLS encryption, OWASP security practices, SQL injection prevention, XSS protection, CSRF tokens, rate limiting, and regular security audits. For sensitive applications, we add WAF, DDoS protection, and SOC 2 compliance measures."
+    },
+    {
+      question: "Do you provide hosting and maintenance?",
+      answer: "Yes, we offer managed hosting on AWS, Azure, or GCP with 99.9% uptime SLA. Our maintenance packages include security updates, performance monitoring, bug fixes, and regular backups. We also provide 24/7 support for critical applications."
+    },
+    {
+      question: "Can you migrate our existing website to a new platform?",
+      answer: "Absolutely. We have extensive experience migrating websites between platforms while preserving SEO rankings, content, and functionality. We create detailed migration plans with rollback strategies to ensure zero data loss and minimal downtime."
+    },
+    {
+      question: "How do you handle scalability?",
+      answer: "We design applications with scalability in mind from day one. This includes microservices architecture, containerization with Docker/Kubernetes, auto-scaling cloud infrastructure, database optimization, and caching strategies. Your app will handle traffic spikes seamlessly."
+    }
+  ],
+  relatedServices: [
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
+    { name: "UI/UX Design", href: "/services/ui-ux-design" },
+    { name: "Cloud Migration", href: "/services/cloud-migration" },
+    { name: "Cybersecurity", href: "/services/cybersecurity" }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData}>
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+            Enterprise-Grade Web Solutions
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            From startups to Fortune 500 companies, we build web applications that scale with your business. Our solutions are secure, performant, and designed for long-term success.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <div class="text-2xl font-bold text-primary mb-1">SOC 2</div>
+              <div class="text-sm text-gray-600">Compliant Development</div>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <div class="text-2xl font-bold text-accent mb-1">WCAG 2.1</div>
+              <div class="text-sm text-gray-600">Accessibility Standards</div>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <div class="text-2xl font-bold text-secondary mb-1">CI/CD</div>
+              <div class="text-sm text-gray-600">Automated Deployment</div>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-xl">
+              <div class="text-2xl font-bold text-green-600 mb-1">100%</div>
+              <div class="text-sm text-gray-600">Test Coverage Goal</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-accent/10 to-secondary/10 rounded-3xl p-8 text-center">
+          <div class="text-6xl mb-4">💻</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Featured Project</h3>
+          <p class="text-gray-600 mb-4">SecureBank Portal - Enterprise banking dashboard serving 2M+ users with SOC 2 compliance</p>
+          <div class="flex justify-center gap-4 text-sm">
+            <span class="px-3 py-1 bg-white rounded-full">2M+ Users</span>
+            <span class="px-3 py-1 bg-white rounded-full">99.99% Uptime</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

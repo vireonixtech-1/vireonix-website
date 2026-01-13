@@ -1,0 +1,97 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  title="HealthFirst Insurance: AI-Powered Document Processing"
+  description="How we helped HealthFirst Insurance reduce claim processing time by 85% and save $2M annually through intelligent document automation."
+  client="HealthFirst Insurance"
+  industry="Healthcare"
+  services={["Generative AI", "Cloud Migration", "System Integration"]}
+  duration="6 months"
+  results={[
+    { metric: "Processing Time", value: "-85%" },
+    { metric: "Annual Savings", value: "$2M" },
+    { metric: "Accuracy Rate", value: "99.2%" },
+    { metric: "Claims/Day", value: "10x" }
+  ]}
+  technologies={["OpenAI GPT-4", "AWS", "Python", "LangChain", "PostgreSQL", "React", "Docker", "Kubernetes"]}
+  challenge="HealthFirst Insurance was processing over 50,000 insurance claims monthly, with each claim requiring manual review of multiple documents including medical records, invoices, and policy documents. The manual process took an average of 45 minutes per claim, created backlogs during peak periods, and resulted in inconsistent decisions. The company needed to scale operations without proportionally increasing headcount."
+  solution="We implemented a comprehensive AI-powered document processing system that automatically extracts, validates, and processes claim information. The solution uses GPT-4 for intelligent document understanding, custom-trained models for medical terminology, and a human-in-the-loop workflow for edge cases. The system integrates seamlessly with their existing claims management platform."
+>
+  <h3>Implementation Approach</h3>
+
+  <h4>Phase 1: Document Intelligence Pipeline</h4>
+  <p>
+    We built a sophisticated document processing pipeline that handles multiple document types:
+  </p>
+  <ul>
+    <li><strong>OCR & Text Extraction:</strong> High-accuracy extraction from scanned documents, faxes, and PDFs</li>
+    <li><strong>Document Classification:</strong> Automatic identification of document types (medical records, invoices, EOBs)</li>
+    <li><strong>Entity Extraction:</strong> Extraction of key fields like patient info, diagnosis codes, procedure codes, and amounts</li>
+    <li><strong>Cross-Document Validation:</strong> Automatic verification that information is consistent across all claim documents</li>
+  </ul>
+
+  <h4>Phase 2: AI Decision Engine</h4>
+  <p>
+    The core AI engine evaluates claims against policy rules and historical patterns:
+  </p>
+  <ul>
+    <li><strong>Policy Compliance Check:</strong> Automatic verification against coverage rules and exclusions</li>
+    <li><strong>Medical Necessity Review:</strong> AI-assisted evaluation of treatment appropriateness</li>
+    <li><strong>Fraud Detection:</strong> Pattern analysis to flag suspicious claims for review</li>
+    <li><strong>Auto-Adjudication:</strong> Automatic approval of straightforward claims meeting all criteria</li>
+  </ul>
+
+  <h4>Phase 3: Human-in-the-Loop Workflow</h4>
+  <p>
+    Not all claims can be fully automated. We designed an intelligent routing system:
+  </p>
+  <ul>
+    <li><strong>Confidence Scoring:</strong> Each decision includes a confidence score</li>
+    <li><strong>Smart Routing:</strong> Low-confidence claims routed to appropriate specialists</li>
+    <li><strong>Assisted Review:</strong> AI provides recommendations and highlights key information for human reviewers</li>
+    <li><strong>Continuous Learning:</strong> Human decisions feed back to improve model accuracy</li>
+  </ul>
+
+  <h3>Technical Architecture</h3>
+  <p>
+    The solution runs on AWS with a microservices architecture designed for scalability and reliability:
+  </p>
+  <ul>
+    <li><strong>Ingestion Layer:</strong> S3 + Lambda for document intake from multiple channels</li>
+    <li><strong>Processing Layer:</strong> EKS-hosted microservices for document processing</li>
+    <li><strong>AI Layer:</strong> SageMaker endpoints for custom models + OpenAI API for GPT-4</li>
+    <li><strong>Data Layer:</strong> Aurora PostgreSQL for structured data, OpenSearch for document search</li>
+    <li><strong>Integration Layer:</strong> API Gateway + custom connectors for legacy systems</li>
+  </ul>
+
+  <h3>Security & Compliance</h3>
+  <p>
+    Healthcare data requires the highest security standards. Our implementation includes:
+  </p>
+  <ul>
+    <li>HIPAA-compliant infrastructure with BAA from all vendors</li>
+    <li>End-to-end encryption for data at rest and in transit</li>
+    <li>Role-based access controls with audit logging</li>
+    <li>PHI data masking in non-production environments</li>
+    <li>Regular penetration testing and security audits</li>
+  </ul>
+
+  <h3>Results & Impact</h3>
+  <p>
+    The implementation delivered transformative results within the first year:
+  </p>
+  <ul>
+    <li><strong>85% faster processing:</strong> Average claim processing time reduced from 45 minutes to under 7 minutes</li>
+    <li><strong>10x throughput:</strong> Daily claim processing capacity increased from 2,000 to 20,000</li>
+    <li><strong>99.2% accuracy:</strong> AI decisions match or exceed human accuracy</li>
+    <li><strong>$2M annual savings:</strong> Reduced operational costs while handling more volume</li>
+    <li><strong>Improved member satisfaction:</strong> Faster claim resolution led to 23% improvement in NPS scores</li>
+  </ul>
+
+  <blockquote>
+    "Vireonix's AI solution transformed our claims operation. We're processing 10x more claims with the same team, and our members are getting faster, more accurate decisions. The ROI exceeded our projections within 6 months."
+    <cite>— VP of Operations, HealthFirst Insurance</cite>
+  </blockquote>
+</CaseStudyLayout>

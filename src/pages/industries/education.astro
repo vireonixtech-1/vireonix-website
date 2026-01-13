@@ -1,0 +1,291 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vireonixtech.com" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://vireonixtech.com/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Education" }
+  ]
+};
+---
+
+<Layout
+  title="Education Technology Solutions | EdTech & LMS | Vireonix Technologies"
+  description="Transform education with custom LMS platforms, student information systems, virtual learning environments, and AI-powered adaptive learning solutions. FERPA compliant."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-sm text-white/60 mb-8">
+          <a href="/" class="hover:text-white">Home</a>
+          <span>/</span>
+          <a href="/industries" class="hover:text-white">Industries</a>
+          <span>/</span>
+          <span class="text-white">Education</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="text-6xl mb-6">🎓</div>
+            <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold mb-6">
+              Education Technology Solutions
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              Empower educators and learners with innovative EdTech solutions. From K-12 to higher education and corporate training, we build technology that transforms learning experiences.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Get Started
+              </a>
+              <a href="/case-studies" class="bg-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
+                View Case Studies
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">25+</div>
+              <div class="text-white/80">Education Clients</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">2M+</div>
+              <div class="text-white/80">Students Served</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">100%</div>
+              <div class="text-white/80">FERPA Compliant</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">40%</div>
+              <div class="text-white/80">Engagement Increase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Education Solutions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive technology solutions for modern education institutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Learning Management Systems</h3>
+            <p class="text-gray-600 mb-4">Custom LMS platforms with course management, assessments, progress tracking, and certification.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Course authoring tools</li>
+              <li>• SCORM/xAPI compliance</li>
+              <li>• Progress analytics</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Student Information Systems</h3>
+            <p class="text-gray-600 mb-4">Comprehensive SIS for admissions, enrollment, grades, attendance, and student records management.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Enrollment management</li>
+              <li>• Transcript generation</li>
+              <li>• Parent portals</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Virtual Learning Environments</h3>
+            <p class="text-gray-600 mb-4">Interactive virtual classrooms with live video, breakout rooms, whiteboards, and collaboration tools.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Live video classes</li>
+              <li>• Interactive whiteboards</li>
+              <li>• Recording & playback</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Powered Adaptive Learning</h3>
+            <p class="text-gray-600 mb-4">Personalized learning paths powered by AI that adapt to each student's pace and learning style.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Personalized content</li>
+              <li>• Knowledge gap analysis</li>
+              <li>• Intelligent tutoring</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Assessment & Analytics</h3>
+            <p class="text-gray-600 mb-4">Online testing, automated grading, plagiarism detection, and comprehensive learning analytics.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Online assessments</li>
+              <li>• AI-powered grading</li>
+              <li>• Plagiarism detection</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Corporate Training</h3>
+            <p class="text-gray-600 mb-4">Enterprise training platforms with compliance tracking, skill assessments, and certification management.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Compliance training</li>
+              <li>• Skill assessments</li>
+              <li>• Certification tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+              Education Compliance & Security
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              We understand the unique compliance requirements of education institutions and build security into every solution.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">FERPA Compliant</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">COPPA Compliant (for K-12)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">WCAG 2.1 AA Accessibility</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">SOC 2 Type II Certified</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-gray-700">GDPR Ready (for international)</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Who We Serve</h3>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">📚</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">K-12 Schools</h4>
+                  <p class="text-gray-600 text-sm">Public and private schools, school districts</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">🏛️</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Higher Education</h4>
+                  <p class="text-gray-600 text-sm">Universities, colleges, community colleges</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">💼</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Corporate Training</h4>
+                  <p class="text-gray-600 text-sm">Enterprise L&D departments, training providers</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">🚀</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">EdTech Startups</h4>
+                  <p class="text-gray-600 text-sm">Educational technology companies and startups</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-accent text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Transform Education?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Let's discuss how we can help you create engaging, effective learning experiences.
+        </p>
+        <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          Schedule Education Consultation
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

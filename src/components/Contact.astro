@@ -1,0 +1,511 @@
+---
+---
+
+<section id="contact" class="py-24 bg-dark relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal-up">
+      <span class="inline-block px-4 py-2 bg-white/10 text-accent rounded-full text-sm font-semibold mb-4">
+        Get In Touch
+      </span>
+      <h2 class="text-4xl md:text-5xl font-montserrat font-extrabold text-white mb-4">
+        Let's Build Something Amazing Together
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Ready to transform your business with cutting-edge technology? Get in touch and let's discuss your project.
+      </p>
+    </div>
+
+    <!-- Contact Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start reveal-up" style="transition-delay: 0.2s;">
+      <!-- Contact Form -->
+      <div class="relative">
+        <div class="bg-card-gradient backdrop-blur-md border border-white/10 rounded-3xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+          
+          <form class="space-y-6" id="contact-form">
+            <!-- Status Messages -->
+            <div id="form-status" class="hidden p-4 rounded-xl mb-6">
+              <div id="status-message" class="text-sm font-medium"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-300 mb-2">First Name *</label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="firstName" 
+                  required
+                  class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+                  placeholder="John"
+                >
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-300 mb-2">Last Name *</label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  name="lastName" 
+                  required
+                  class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+                  placeholder="Doe"
+                >
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+                placeholder="john.doe@company.com"
+              >
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+                placeholder="+1 (555) 123-4567"
+              >
+            </div>
+            
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company</label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company"
+                class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+                placeholder="Your Company Name"
+              >
+            </div>
+            
+            <div>
+              <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Interested In</label>
+              <select 
+                id="service" 
+                name="service"
+                class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+              >
+                <option value="" class="bg-gray-800">Select a service</option>
+                <option value="app-development" class="bg-gray-800">Mobile App Development</option>
+                <option value="web-development" class="bg-gray-800">Web Development</option>
+                <option value="salesforce" class="bg-gray-800">Salesforce Solutions</option>
+                <option value="gen-ai" class="bg-gray-800">Generative AI</option>
+                <option value="ui-ux" class="bg-gray-800">UI/UX Design</option>
+                <option value="wordpress" class="bg-gray-800">WordPress Development</option>
+                <option value="database-security" class="bg-gray-800">Database Security</option>
+                <option value="cybersecurity" class="bg-gray-800">Cybersecurity</option>
+                <option value="cloud-migration" class="bg-gray-800">Cloud Migration</option>
+                <option value="other" class="bg-gray-800">Other</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="budget" class="block text-sm font-medium text-gray-300 mb-2">Project Budget</label>
+              <select 
+                id="budget" 
+                name="budget"
+                class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300"
+              >
+                <option value="" class="bg-gray-800">Select budget range</option>
+                <option value="10k-25k" class="bg-gray-800">$10,000 - $25,000</option>
+                <option value="25k-50k" class="bg-gray-800">$25,000 - $50,000</option>
+                <option value="50k-100k" class="bg-gray-800">$50,000 - $100,000</option>
+                <option value="100k-250k" class="bg-gray-800">$100,000 - $250,000</option>
+                <option value="250k+" class="bg-gray-800">$250,000+</option>
+                <option value="discuss" class="bg-gray-800">Prefer to discuss</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4"
+                required
+                class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/50 transition-all duration-300 resize-none"
+                placeholder="Tell us about your project, goals, and any specific requirements..."
+              ></textarea>
+            </div>
+            
+            <!-- Agreement -->
+            <div class="flex items-start gap-3">
+              <input 
+                type="checkbox" 
+                id="agreement" 
+                name="agreement" 
+                required
+                class="mt-1 w-5 h-5 text-accent bg-white/5 border border-white/20 rounded focus:ring-accent focus:ring-2"
+              >
+              <label for="agreement" class="text-sm text-gray-300">
+                I agree to the <a href="/terms-of-service" class="text-accent hover:text-white transition-colors">Terms of Service</a> and <a href="/privacy-policy" class="text-accent hover:text-white transition-colors">Privacy Policy</a>. I consent to receive communications about my project.
+              </label>
+            </div>
+            
+            <!-- Submit Button -->
+            <button 
+              type="submit"
+              id="submit-btn"
+              class="w-full bg-button-gradient text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              <span id="submit-text">Send Message</span>
+              <div id="submit-spinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <!-- Company Info Card -->
+        <div class="bg-card-gradient backdrop-blur-md border border-white/10 rounded-3xl p-8">
+          <h3 class="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+          
+          <div class="space-y-6">
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm text-gray-400">Phone</div>
+                <a href="tel:+13042169092" class="text-white hover:text-accent transition-colors text-lg font-medium">
+                  +1 (304) 216-9092
+                </a>
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm text-gray-400">Email</div>
+                <a href="mailto:hr@vireonixtech.com" class="text-white hover:text-accent transition-colors text-lg font-medium">
+                  hr@vireonixtech.com
+                </a>
+              </div>
+            </div>
+            
+            <!-- Address -->
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mt-1">
+                <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm text-gray-400">Address</div>
+                <div class="text-white text-lg font-medium leading-relaxed">
+                  670 Calvet Way<br>
+                  Cumming, GA 30041<br>
+                  United States
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Business Hours -->
+        <div class="bg-card-gradient backdrop-blur-md border border-white/10 rounded-3xl p-8">
+          <h3 class="text-xl font-bold text-white mb-6">Business Hours</h3>
+          
+          <div class="space-y-3 text-gray-300">
+            <div class="flex justify-between">
+              <span>Monday - Friday</span>
+              <span class="text-white">9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Saturday</span>
+              <span class="text-white">10:00 AM - 4:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Sunday</span>
+              <span class="text-gray-400">Closed</span>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+              <div class="flex items-center gap-2 text-accent">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm">Emergency support available 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Response Time -->
+        <div class="bg-card-gradient backdrop-blur-md border border-white/10 rounded-3xl p-8">
+          <h3 class="text-xl font-bold text-white mb-6">What to Expect</h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span class="text-gray-300">Initial response within 2 hours</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-accent rounded-full"></div>
+              <span class="text-gray-300">Free consultation call scheduled</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-gray-300">Detailed proposal within 48 hours</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-secondary rounded-full"></div>
+              <span class="text-gray-300">Project kickoff within 1 week</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background Elements -->
+  <div class="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-10 left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // ===== EMAILJS CONFIGURATION =====
+    // IMPORTANT: Replace these placeholder values with your actual EmailJS credentials
+    // Get your credentials at: https://www.emailjs.com/
+    // 1. Create an account at EmailJS
+    // 2. Create an email service (Gmail, Outlook, etc.)
+    // 3. Create an email template
+    // 4. Get your Public Key from Account > API Keys
+
+    const EMAIL_CONFIG = {
+      serviceID: 'YOUR_SERVICE_ID',     // e.g., 'service_abc123' - from EmailJS Dashboard > Email Services
+      templateID: 'YOUR_TEMPLATE_ID',   // e.g., 'template_xyz789' - from EmailJS Dashboard > Email Templates
+      publicKey: 'YOUR_PUBLIC_KEY'      // e.g., 'AbCdEfGhIjKlMnOp' - from EmailJS Dashboard > Account > API Keys
+    };
+
+    // Initialize EmailJS (only if configured)
+    const isConfigured = EMAIL_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY' &&
+                         EMAIL_CONFIG.serviceID !== 'YOUR_SERVICE_ID' &&
+                         EMAIL_CONFIG.templateID !== 'YOUR_TEMPLATE_ID';
+
+    if (isConfigured) {
+      emailjs.init(EMAIL_CONFIG.publicKey);
+    }
+    
+    // ===== DOM ELEMENTS =====
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitSpinner = document.getElementById('submit-spinner');
+    const formStatus = document.getElementById('form-status');
+    const statusMessage = document.getElementById('status-message');
+    
+    // ===== UTILITY FUNCTIONS =====
+    
+    function showStatus(message, type = 'success') {
+      formStatus.classList.remove('hidden');
+      statusMessage.textContent = message;
+      
+      // Remove existing status classes
+      formStatus.classList.remove('bg-green-500/20', 'border-green-500/30', 'text-green-300');
+      formStatus.classList.remove('bg-red-500/20', 'border-red-500/30', 'text-red-300');
+      formStatus.classList.remove('bg-blue-500/20', 'border-blue-500/30', 'text-blue-300');
+      
+      // Add appropriate status classes
+      if (type === 'success') {
+        formStatus.classList.add('bg-green-500/20', 'border-green-500/30', 'text-green-300', 'border');
+      } else if (type === 'error') {
+        formStatus.classList.add('bg-red-500/20', 'border-red-500/30', 'text-red-300', 'border');
+      } else if (type === 'info') {
+        formStatus.classList.add('bg-blue-500/20', 'border-blue-500/30', 'text-blue-300', 'border');
+      }
+      
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        formStatus.classList.add('hidden');
+      }, 5000);
+    }
+    
+    function setLoadingState(isLoading) {
+      if (isLoading) {
+        submitBtn.disabled = true;
+        submitText.textContent = 'Sending...';
+        submitSpinner.classList.remove('hidden');
+        submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+      } else {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Send Message';
+        submitSpinner.classList.add('hidden');
+        submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+      }
+    }
+    
+    function validateForm(formData) {
+      const errors = [];
+      
+      // Required field validation
+      const requiredFields = [
+        { field: 'firstName', name: 'First Name' },
+        { field: 'lastName', name: 'Last Name' },
+        { field: 'email', name: 'Email' },
+        { field: 'message', name: 'Message' }
+      ];
+      
+      requiredFields.forEach(({ field, name }) => {
+        if (!formData[field]?.trim()) {
+          errors.push(`${name} is required`);
+        }
+      });
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (formData.email && !emailRegex.test(formData.email)) {
+        errors.push('Please enter a valid email address');
+      }
+      
+      // Agreement validation
+      if (!formData.agreement) {
+        errors.push('Please agree to the Terms of Service and Privacy Policy');
+      }
+      
+      return errors;
+    }
+    
+    // ===== FORM SUBMISSION HANDLER =====
+    
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Show initial status
+        showStatus('Validating form...', 'info');
+        
+        // Get and validate form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        // Validate form
+        const validationErrors = validateForm(data);
+        if (validationErrors.length > 0) {
+          showStatus(`Validation Error: ${validationErrors[0]}`, 'error');
+          return;
+        }
+        
+        // Check EmailJS configuration
+        if (!isConfigured) {
+          showStatus('Contact form is being set up. Please email us directly at hr@vireonixtech.com or call +1 (304) 216-9092', 'error');
+          console.warn('EmailJS not configured. See Contact.astro for setup instructions.');
+
+          // Open email client as fallback
+          const subject = encodeURIComponent(`Project Inquiry from ${data.firstName} ${data.lastName}`);
+          const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\nCompany: ${data.company || 'Not provided'}\nService: ${data.service || 'Not specified'}\nBudget: ${data.budget || 'Not specified'}\n\nMessage:\n${data.message}`);
+          window.open(`mailto:hr@vireonixtech.com?subject=${subject}&body=${body}`, '_blank');
+          return;
+        }
+        
+        // Set loading state
+        setLoadingState(true);
+        showStatus('Sending your message...', 'info');
+        
+        try {
+          // Prepare email template parameters
+          const templateParams = {
+            from_name: `${data.firstName} ${data.lastName}`,
+            from_email: data.email,
+            phone: data.phone || 'Not provided',
+            company: data.company || 'Not provided',
+            service: data.service || 'Not specified',
+            budget: data.budget || 'Not specified',
+            message: data.message,
+            to_name: 'Vireonix Technologies LLC Team',
+            reply_to: data.email
+          };
+          
+          // Send email via EmailJS
+          const response = await emailjs.send(
+            EMAIL_CONFIG.serviceID,
+            EMAIL_CONFIG.templateID,
+            templateParams,
+            EMAIL_CONFIG.publicKey
+          );
+          
+          // Success handling
+          if (response.status === 200) {
+            showStatus('✅ Message sent successfully! We\'ll get back to you within 2 hours.', 'success');
+            form.reset();
+            
+            // Optional: Track successful submission
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'form_submit', {
+                event_category: 'Contact',
+                event_label: 'Success'
+              });
+            }
+          } else {
+            throw new Error(`EmailJS returned status: ${response.status}`);
+          }
+          
+        } catch (error) {
+          // Error handling
+          console.error('EmailJS Error:', error);
+          
+          let errorMessage = 'Failed to send message. Please try again or contact us directly.';
+          
+          // Handle specific error types
+          if (error.text) {
+            if (error.text.includes('rate limit')) {
+              errorMessage = 'Too many requests. Please wait a moment and try again.';
+            } else if (error.text.includes('template')) {
+              errorMessage = 'Email template error. Please contact support.';
+            } else if (error.text.includes('service')) {
+              errorMessage = 'Email service unavailable. Please try again later.';
+            }
+          }
+          
+          showStatus(`❌ ${errorMessage}`, 'error');
+          
+          // Optional: Track failed submission
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submit', {
+              event_category: 'Contact',
+              event_label: 'Error',
+              event_value: error.message
+            });
+          }
+          
+        } finally {
+          // Reset loading state
+          setLoadingState(false);
+        }
+      });
+    }
+    
+    // ===== FALLBACK ERROR HANDLING =====
+    
+    // Handle EmailJS loading errors
+    window.addEventListener('error', function(e) {
+      if (e.filename && e.filename.includes('emailjs')) {
+        console.error('EmailJS failed to load:', e);
+        showStatus('Email service unavailable. Please contact us directly.', 'error');
+      }
+    });
+  });
+</script>

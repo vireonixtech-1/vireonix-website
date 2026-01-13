@@ -1,0 +1,61 @@
+---
+---
+
+<button
+  id="back-to-top"
+  class="fixed bottom-8 right-8 z-50 w-14 h-14 bg-gradient-to-br from-primary to-accent text-white rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:shadow-xl hover:scale-110 group"
+  aria-label="Back to top"
+>
+  <svg class="w-6 h-6 transition-transform duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+
+  <!-- Progress ring -->
+  <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 56 56">
+    <circle
+      id="progress-ring"
+      cx="28"
+      cy="28"
+      r="26"
+      fill="none"
+      stroke="rgba(255,255,255,0.3)"
+      stroke-width="2"
+      stroke-dasharray="163.36"
+      stroke-dashoffset="163.36"
+      class="transition-all duration-150"
+    />
+  </svg>
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('back-to-top');
+    const progressRing = document.getElementById('progress-ring');
+    const circumference = 2 * Math.PI * 26;
+
+    if (!btn || !progressRing) return;
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      const offset = circumference - (scrollPercent * circumference);
+      progressRing.style.strokeDashoffset = offset.toString();
+    };
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        btn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        btn.classList.remove('opacity-100', 'translate-y-0');
+      }
+      updateProgress();
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>

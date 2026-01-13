@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vireonixtech.com" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://vireonixtech.com/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Technology" }
+  ]
+};
+---
+
+<Layout
+  title="Technology & SaaS Solutions | Product Development | Vireonix Technologies"
+  description="Accelerate your technology product development. Custom SaaS platforms, API development, DevOps automation, and scalable cloud architecture for tech companies."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-sm text-white/60 mb-8">
+          <a href="/" class="hover:text-white">Home</a>
+          <span>/</span>
+          <a href="/industries" class="hover:text-white">Industries</a>
+          <span>/</span>
+          <span class="text-white">Technology</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="text-6xl mb-6">💻</div>
+            <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold mb-6">
+              Technology & SaaS Solutions
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              Scale your technology business with expert product development, cloud architecture, and DevOps practices. We help tech companies build better products faster.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Get Started
+              </a>
+              <a href="/case-studies" class="bg-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
+                View Case Studies
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">100+</div>
+              <div class="text-white/80">Tech Clients</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">50+</div>
+              <div class="text-white/80">Products Launched</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">3x</div>
+              <div class="text-white/80">Faster Time to Market</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">99.99%</div>
+              <div class="text-white/80">Uptime SLA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Technology Solutions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Full-stack technology services for startups, scale-ups, and enterprise tech companies
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">SaaS Product Development</h3>
+            <p class="text-gray-600 mb-4">End-to-end SaaS product development from MVP to enterprise scale. Multi-tenant architecture and subscription billing.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Multi-tenant architecture</li>
+              <li>• Subscription management</li>
+              <li>• White-label solutions</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">API Development</h3>
+            <p class="text-gray-600 mb-4">RESTful and GraphQL API design and development. API gateway implementation and documentation.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• REST & GraphQL APIs</li>
+              <li>• API gateway setup</li>
+              <li>• Developer portals</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Cloud Architecture</h3>
+            <p class="text-gray-600 mb-4">Scalable, resilient cloud architecture on AWS, Azure, or GCP. Microservices and serverless design.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Microservices architecture</li>
+              <li>• Serverless solutions</li>
+              <li>• Auto-scaling design</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">DevOps & CI/CD</h3>
+            <p class="text-gray-600 mb-4">Automated deployment pipelines, infrastructure as code, and continuous delivery practices.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• CI/CD pipelines</li>
+              <li>• Infrastructure as code</li>
+              <li>• Container orchestration</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Platform Engineering</h3>
+            <p class="text-gray-600 mb-4">Internal developer platforms, tooling, and self-service infrastructure for engineering teams.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Developer experience</li>
+              <li>• Self-service portals</li>
+              <li>• Golden paths</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Technical Consulting</h3>
+            <p class="text-gray-600 mb-4">Architecture reviews, technology selection, and technical due diligence for investors.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Architecture review</li>
+              <li>• Tech due diligence</li>
+              <li>• Tech strategy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Startup & Scale Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+              From Startup to Scale
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              Whether you're building your first MVP or scaling to millions of users, we have the expertise to help you succeed.
+            </p>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">🚀</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Startups</h4>
+                  <p class="text-gray-600 text-sm">MVP development, product-market fit, and rapid iteration</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">📈</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Scale-ups</h4>
+                  <p class="text-gray-600 text-sm">Team augmentation, architecture scaling, and process optimization</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span class="text-2xl">🏢</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-1">Enterprise</h4>
+                  <p class="text-gray-600 text-sm">Legacy modernization, platform engineering, and digital transformation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Technology Stack</h3>
+            <p class="text-gray-600 mb-6">
+              We work with modern technologies to build scalable, maintainable systems.
+            </p>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">Frontend</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">React</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Next.js</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Vue</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">TypeScript</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">Backend</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Node.js</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Python</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Go</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Java</span>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">Infrastructure</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">AWS</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Kubernetes</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Terraform</span>
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-accent text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Build Something Great?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Let's discuss how we can help you accelerate your product development and scale your technology.
+        </p>
+        <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          Schedule Tech Consultation
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

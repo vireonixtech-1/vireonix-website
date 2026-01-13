@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const caseStudies = [
+  {
+    slug: 'healthfirst-ai-document-processing',
+    client: 'HealthFirst Insurance',
+    title: 'AI-Powered Document Processing',
+    description: 'Reduced claim processing time by 85% with intelligent document automation',
+    industry: 'Healthcare',
+    services: ['Generative AI', 'Cloud Migration'],
+    results: [
+      { metric: 'Processing Time', value: '-85%' },
+      { metric: 'Cost Savings', value: '$2M' }
+    ],
+    featured: true
+  },
+  {
+    slug: 'retailmax-cloud-migration',
+    client: 'RetailMax',
+    title: 'Enterprise Cloud Migration',
+    description: 'Migrated 500+ VMs to AWS with zero downtime and 45% cost reduction',
+    industry: 'Retail',
+    services: ['Cloud Migration', 'DevOps'],
+    results: [
+      { metric: 'Cost Reduction', value: '45%' },
+      { metric: 'Downtime', value: 'Zero' }
+    ],
+    featured: true
+  },
+  {
+    slug: 'financecore-database-security',
+    client: 'FinanceCore Bank',
+    title: 'Database Security & Compliance',
+    description: 'Achieved PCI-DSS certification with comprehensive database security overhaul',
+    industry: 'Financial Services',
+    services: ['Database Security', 'Cybersecurity'],
+    results: [
+      { metric: 'Compliance', value: '100%' },
+      { metric: 'Data Secured', value: '500TB' }
+    ],
+    featured: false
+  },
+  {
+    slug: 'techflow-saas-redesign',
+    client: 'TechFlow SaaS',
+    title: 'UI/UX Redesign & Development',
+    description: 'Complete product redesign resulting in 65% increase in trial signups',
+    industry: 'Technology',
+    services: ['UI/UX Design', 'Web Development'],
+    results: [
+      { metric: 'Signups', value: '+65%' },
+      { metric: 'Churn', value: '-40%' }
+    ],
+    featured: false
+  },
+  {
+    slug: 'globaltech-salesforce-implementation',
+    client: 'GlobalTech Industries',
+    title: 'Salesforce Implementation',
+    description: 'End-to-end Salesforce implementation with custom integrations and training',
+    industry: 'Manufacturing',
+    services: ['Salesforce Solutions', 'Integration'],
+    results: [
+      { metric: 'Productivity', value: '+40%' },
+      { metric: 'ROI', value: '300%' }
+    ],
+    featured: false
+  },
+  {
+    slug: 'mediahub-wordpress-enterprise',
+    client: 'MediaHub Publishing',
+    title: 'Enterprise WordPress Platform',
+    description: 'Built scalable multisite network handling 10M monthly visitors across 50+ properties',
+    industry: 'Media',
+    services: ['WordPress Development', 'Cloud Migration'],
+    results: [
+      { metric: 'Visitors/Mo', value: '10M' },
+      { metric: 'Sites', value: '50+' }
+    ],
+    featured: false
+  }
+];
+
+const featuredStudies = caseStudies.filter(c => c.featured);
+const otherStudies = caseStudies.filter(c => !c.featured);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://vireonixtech.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Studies"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Case Studies | Client Success Stories | Vireonix Technologies"
+  description="Explore how Vireonix Technologies has helped businesses achieve digital transformation. Real results from web development, cloud migration, AI, and Salesforce projects."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-dark to-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center items-center gap-2 text-sm text-white/60 mb-8">
+          <a href="/" class="hover:text-white">Home</a>
+          <span>/</span>
+          <span class="text-white">Case Studies</span>
+        </nav>
+
+        <h1 class="text-4xl md:text-6xl font-montserrat font-extrabold mb-6">
+          Client Success Stories
+        </h1>
+        <p class="text-xl text-white/80 max-w-3xl mx-auto">
+          Real results from real projects. See how we've helped businesses across industries achieve their technology goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Case Studies -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">Featured Projects</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {featuredStudies.map(study => (
+            <a href={`/case-studies/${study.slug}`} class="group relative bg-gradient-to-br from-gray-900 to-dark rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div class="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <span class="text-6xl opacity-30 group-hover:opacity-50 transition-opacity">
+                  {study.industry === 'Healthcare' ? '🏥' : '🛒'}
+                </span>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">
+                    {study.industry}
+                  </span>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                  {study.client}
+                </h3>
+                <p class="text-lg text-white/80 mb-4">{study.title}</p>
+                <p class="text-white/60 mb-6">{study.description}</p>
+
+                <div class="flex gap-6 mb-6">
+                  {study.results.map(result => (
+                    <div>
+                      <div class="text-2xl font-bold text-accent">{result.value}</div>
+                      <div class="text-white/60 text-sm">{result.metric}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                  {study.services.map(service => (
+                    <span class="px-2 py-1 bg-white/10 text-white/80 text-xs rounded-full">
+                      {service}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- All Case Studies -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">More Success Stories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {otherStudies.map(study => (
+            <a href={`/case-studies/${study.slug}`} class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+              <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+                <span class="text-4xl opacity-30 group-hover:opacity-50 transition-opacity">
+                  {study.industry === 'Financial Services' ? '💰' :
+                   study.industry === 'Technology' ? '💻' :
+                   study.industry === 'Manufacturing' ? '🏭' : '📰'}
+                </span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
+                    {study.industry}
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
+                  {study.client}
+                </h3>
+                <p class="text-gray-600 text-sm mb-4">{study.title}</p>
+
+                <div class="flex gap-4">
+                  {study.results.slice(0, 2).map(result => (
+                    <div>
+                      <div class="text-lg font-bold text-primary">{result.value}</div>
+                      <div class="text-gray-500 text-xs">{result.metric}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-primary to-accent text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Be Our Next Success Story?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Let's discuss how we can help you achieve similar results for your business.
+        </p>
+        <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          Start Your Project
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

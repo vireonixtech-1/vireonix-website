@@ -1,0 +1,178 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Generative AI Services | ChatGPT, LLMs, AI Integration | Vireonix Technologies",
+  description: "Enterprise generative AI solutions. Custom LLM development, ChatGPT integration, AI chatbots, document processing. Transform your business with AI. Get started today.",
+  serviceName: "Generative AI",
+  serviceTagline: "Harness the power of generative AI to automate workflows, enhance customer experiences, and unlock new business opportunities with custom AI solutions.",
+  heroIcon: `<svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" /></svg>`,
+  gradientFrom: "primary",
+  gradientTo: "secondary",
+  features: [
+    {
+      title: "Custom LLM Development",
+      description: "Fine-tuned large language models trained on your proprietary data for domain-specific applications and enhanced accuracy.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "AI Chatbots & Assistants",
+      description: "Intelligent conversational AI that handles customer support, sales inquiries, and internal helpdesk with human-like interactions.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Document Intelligence",
+      description: "AI-powered document processing for contracts, invoices, and reports. Extract insights, automate data entry, and improve compliance.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Content Generation",
+      description: "Automated content creation for marketing, documentation, and communications while maintaining your brand voice and quality standards.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "RAG Solutions",
+      description: "Retrieval-Augmented Generation systems that combine your knowledge base with LLMs for accurate, contextual responses grounded in your data.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "AI Strategy Consulting",
+      description: "Expert guidance on AI adoption, use case identification, ROI analysis, and building an AI roadmap aligned with your business goals.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    }
+  ],
+  technologies: ["OpenAI GPT-4", "Claude", "LLaMA", "Langchain", "Vector Databases", "Pinecone", "Weaviate", "Hugging Face", "Python", "TensorFlow", "PyTorch", "AWS Bedrock", "Azure OpenAI"],
+  benefits: [
+    { stat: "75%", label: "Cost Reduction" },
+    { stat: "10x", label: "Faster Processing" },
+    { stat: "50+", label: "AI Projects" },
+    { stat: "24/7", label: "AI Availability" }
+  ],
+  faqs: [
+    {
+      question: "What is generative AI and how can it help my business?",
+      answer: "Generative AI refers to AI systems that can create new content - text, images, code, etc. For businesses, it automates content creation, enhances customer service with intelligent chatbots, processes documents at scale, and provides insights from unstructured data. We help identify high-impact use cases specific to your industry."
+    },
+    {
+      question: "Is my company data safe when using AI models?",
+      answer: "Data security is paramount in our AI implementations. We offer private model deployments on your infrastructure, enterprise-grade API integrations with data protection agreements, and custom models trained exclusively on your data. All solutions comply with GDPR, HIPAA, and SOC 2 requirements."
+    },
+    {
+      question: "Can you integrate AI with our existing systems?",
+      answer: "Yes, we specialize in AI integration with existing enterprise systems. We connect AI capabilities with your CRM, ERP, knowledge bases, and workflows through APIs. Our solutions work with Salesforce, SAP, Microsoft 365, and custom applications."
+    },
+    {
+      question: "How long does it take to implement an AI solution?",
+      answer: "Implementation timeline depends on complexity. A basic chatbot integration can be done in 2-4 weeks. Custom RAG solutions typically take 6-8 weeks. Full enterprise AI platforms with multiple use cases may take 3-6 months. We provide detailed project plans during discovery."
+    },
+    {
+      question: "What ROI can we expect from AI implementation?",
+      answer: "ROI varies by use case. Customer service chatbots typically reduce support costs by 40-60%. Document processing automation saves 70-80% of manual processing time. Content generation can increase marketing output 5-10x. We help calculate expected ROI during our initial consultation."
+    }
+  ],
+  relatedServices: [
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
+    { name: "Cloud Migration", href: "/services/cloud-migration" },
+    { name: "Cybersecurity", href: "/services/cybersecurity" }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData}>
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+            Enterprise-Ready AI Solutions
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            We help businesses move beyond AI experimentation to production-ready solutions that deliver measurable ROI. Our team combines deep AI expertise with enterprise integration experience.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Private & Secure Model Deployments</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Custom Model Fine-Tuning</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">HIPAA & SOC 2 Compliant</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700">Enterprise System Integration</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 text-center">
+          <div class="text-6xl mb-4">🤖</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Featured Success</h3>
+          <p class="text-gray-600 mb-4">HealthFirst Insurance - AI document processing reducing claim processing time by 85%</p>
+          <div class="flex justify-center gap-4 text-sm">
+            <span class="px-3 py-1 bg-white rounded-full">85% Faster</span>
+            <span class="px-3 py-1 bg-white rounded-full">$2M Saved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Use Cases -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+          AI Use Cases by Industry
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Discover how generative AI transforms operations across industries
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="text-4xl mb-4">🏥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Healthcare</h3>
+          <ul class="text-gray-600 space-y-2 text-sm">
+            <li>• Clinical documentation automation</li>
+            <li>• Patient inquiry chatbots</li>
+            <li>• Medical literature analysis</li>
+            <li>• Insurance claim processing</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="text-4xl mb-4">💼</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Financial Services</h3>
+          <ul class="text-gray-600 space-y-2 text-sm">
+            <li>• Contract analysis & review</li>
+            <li>• Customer service automation</li>
+            <li>• Fraud detection enhancement</li>
+            <li>• Regulatory compliance reports</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="text-4xl mb-4">🛒</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Retail & E-commerce</h3>
+          <ul class="text-gray-600 space-y-2 text-sm">
+            <li>• Product description generation</li>
+            <li>• Personalized recommendations</li>
+            <li>• Customer support chatbots</li>
+            <li>• Inventory forecasting insights</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

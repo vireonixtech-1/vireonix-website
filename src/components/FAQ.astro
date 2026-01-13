@@ -1,0 +1,196 @@
+---
+const faqs = [
+  {
+    question: "What services does Vireonix Technologies offer?",
+    answer: "Vireonix Technologies provides comprehensive enterprise technology solutions including mobile app development (iOS, Android, React Native), web application development, Salesforce implementation and customization, generative AI solutions, UI/UX design, WordPress development, database security, cybersecurity consulting, and cloud migration services (AWS, Azure, GCP)."
+  },
+  {
+    question: "How long has Vireonix Technologies been in business?",
+    answer: "Vireonix Technologies LLC was founded in 1999, giving us over 25 years of experience in enterprise technology consulting and development. During this time, we've served 300+ clients across 50+ countries and completed numerous successful digital transformation projects."
+  },
+  {
+    question: "What industries does Vireonix Technologies serve?",
+    answer: "We serve clients across diverse industries including healthcare, financial services, retail and e-commerce, travel and hospitality, manufacturing, education, and technology startups. Our solutions are tailored to meet industry-specific compliance requirements such as HIPAA, SOC 2, and PCI-DSS."
+  },
+  {
+    question: "Is Vireonix Technologies certified for security and compliance?",
+    answer: "Yes, Vireonix Technologies maintains ISO 27001 certification for information security management and SOC 2 Type II compliance for security and availability. We follow industry best practices for data protection and regularly undergo third-party security audits."
+  },
+  {
+    question: "What is the typical project timeline and process?",
+    answer: "Our process begins with a free consultation to understand your requirements. After scoping, we provide a detailed proposal within 48 hours. Project timelines vary based on complexity, but we typically kick off within 1 week of agreement. We follow agile methodologies with regular sprint reviews and maintain transparent communication throughout."
+  },
+  {
+    question: "What is the typical budget range for projects?",
+    answer: "Project budgets typically range from $10,000 for smaller engagements to $500,000+ for enterprise-scale digital transformations. We offer flexible engagement models including fixed-price projects, time-and-materials, and dedicated team arrangements. Contact us for a customized quote based on your specific needs."
+  },
+  {
+    question: "Where is Vireonix Technologies located?",
+    answer: "Vireonix Technologies LLC is headquartered in Cumming, Georgia, USA (670 Calvet Way, Cumming, GA 30041). While our main office is in the Atlanta metropolitan area, we serve clients globally across 50+ countries with remote collaboration capabilities and 24/7 support options."
+  },
+  {
+    question: "How can I get started with Vireonix Technologies?",
+    answer: "Getting started is easy. You can contact us by phone at +1 (304) 216-9092, email us at hr@vireonixtech.com, or fill out the contact form on our website. We respond to all inquiries within 2 business hours and offer a free initial consultation to discuss your project requirements."
+  }
+];
+
+// Generate FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section id="faq" class="py-24 bg-gray-50 relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal-up">
+      <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+        </svg>
+        Frequently Asked Questions
+      </div>
+      <h2 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-4">
+        Got Questions? We Have Answers
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Everything you need to know about working with Vireonix Technologies
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4 stagger-children">
+      {faqs.map((faq, index) => (
+        <div class="faq-item stagger-item bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md hover:border-primary/20 transition-all duration-300">
+          <button
+            class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+            aria-expanded="false"
+            aria-controls={`faq-answer-${index}`}
+          >
+            <span class="text-lg font-semibold text-gray-900 pr-4">{faq.question}</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center transition-transform duration-300">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </button>
+          <div
+            id={`faq-answer-${index}`}
+            class="faq-content hidden px-6 pb-5"
+          >
+            <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">Still have questions?</p>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 bg-button-gradient text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+      >
+        Contact Our Team
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+  <div class="absolute bottom-20 left-20 w-40 h-40 bg-accent/5 rounded-full blur-2xl"></div>
+</section>
+
+<!-- FAQ Schema (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      if (trigger && content && icon) {
+        trigger.addEventListener('click', () => {
+          const isOpen = content.classList.contains('hidden') === false;
+
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            const otherTrigger = otherItem.querySelector('.faq-trigger');
+            if (otherContent && otherIcon && otherItem !== item) {
+              otherContent.classList.add('hidden');
+              otherIcon.classList.remove('rotate-180');
+              otherTrigger?.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Toggle current item
+          if (isOpen) {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+            trigger.setAttribute('aria-expanded', 'false');
+          } else {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
+    });
+
+    // Open first FAQ by default
+    const firstItem = faqItems[0];
+    if (firstItem) {
+      const content = firstItem.querySelector('.faq-content');
+      const icon = firstItem.querySelector('.faq-icon');
+      const trigger = firstItem.querySelector('.faq-trigger');
+      if (content && icon) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+        trigger?.setAttribute('aria-expanded', 'true');
+      }
+    }
+  });
+</script>
+
+<style>
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .faq-icon.rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  .faq-content {
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

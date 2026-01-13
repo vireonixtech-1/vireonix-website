@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vireonixtech.com" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://vireonixtech.com/industries" },
+    { "@type": "ListItem", "position": 3, "name": "Financial Services" }
+  ]
+};
+---
+
+<Layout
+  title="Financial Services Technology Solutions | Banking & Fintech | Vireonix Technologies"
+  description="PCI-DSS compliant financial technology solutions. Core banking systems, fraud detection, digital banking, RegTech. Trusted by 40+ financial institutions."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-dark to-gray-900 text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-sm text-white/60 mb-8">
+          <a href="/" class="hover:text-white">Home</a>
+          <span>/</span>
+          <a href="/industries" class="hover:text-white">Industries</a>
+          <span>/</span>
+          <span class="text-white">Financial Services</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="text-6xl mb-6">💰</div>
+            <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold mb-6">
+              Financial Services Solutions
+            </h1>
+            <p class="text-xl text-white/90 mb-8">
+              Secure, compliant technology solutions for banks, credit unions, insurance companies, and fintech innovators.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/#contact" class="bg-accent text-dark px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Get Started
+              </a>
+              <a href="/case-studies/financecore-database-security" class="bg-white/10 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300">
+                View Case Study
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">40+</div>
+              <div class="text-white/80">Financial Clients</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">PCI-DSS</div>
+              <div class="text-white/80">Compliant</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">$10B+</div>
+              <div class="text-white/80">Transactions Secured</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold mb-2">99.99%</div>
+              <div class="text-white/80">Uptime SLA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Financial Services Solutions
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            From legacy modernization to cutting-edge fintech, we deliver secure financial technology
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Digital Banking</h3>
+            <p class="text-gray-600 mb-4">Modern digital banking platforms with mobile apps, online banking, and seamless omnichannel experiences.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Mobile banking apps</li>
+              <li>• Online account opening</li>
+              <li>• Payment integrations</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Fraud Detection & Prevention</h3>
+            <p class="text-gray-600 mb-4">AI-powered fraud detection systems that protect transactions and prevent financial crimes in real-time.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Real-time transaction monitoring</li>
+              <li>• Behavioral analytics</li>
+              <li>• AML compliance</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">RegTech & Compliance</h3>
+            <p class="text-gray-600 mb-4">Automated regulatory compliance solutions for KYC, AML, SOX, and other financial regulations.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• KYC/AML automation</li>
+              <li>• Regulatory reporting</li>
+              <li>• Audit trail management</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Payment Processing</h3>
+            <p class="text-gray-600 mb-4">End-to-end payment solutions including card processing, ACH, wire transfers, and real-time payments.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Multi-channel payments</li>
+              <li>• Payment gateway integration</li>
+              <li>• Instant payments</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Analytics & Risk Management</h3>
+            <p class="text-gray-600 mb-4">Advanced analytics for credit risk, market risk, and operational risk management.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Credit scoring models</li>
+              <li>• Portfolio analytics</li>
+              <li>• Stress testing</li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z" clip-rule="evenodd" />
+                <path d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Legacy Modernization</h3>
+            <p class="text-gray-600 mb-4">Modernize legacy core banking systems with microservices architecture and cloud infrastructure.</p>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li>• Core banking migration</li>
+              <li>• API-first architecture</li>
+              <li>• Cloud transformation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12">Security & Compliance</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <div class="text-2xl font-bold text-primary mb-2">PCI-DSS</div>
+            <div class="text-gray-600 text-sm">Level 1 Compliant</div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <div class="text-2xl font-bold text-primary mb-2">SOX</div>
+            <div class="text-gray-600 text-sm">Compliant</div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <div class="text-2xl font-bold text-primary mb-2">SOC 2</div>
+            <div class="text-gray-600 text-sm">Type II Certified</div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <div class="text-2xl font-bold text-primary mb-2">GDPR</div>
+            <div class="text-gray-600 text-sm">Compliant</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-dark to-gray-900 text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Modernize Your Financial Technology?
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Let's discuss how we can help you compete in the digital economy while maintaining security and compliance.
+        </p>
+        <a href="/#contact" class="bg-accent text-dark px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          Schedule Financial Services Consultation
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

@@ -1,0 +1,396 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const technologyPartners = [
+  {
+    name: "Salesforce",
+    tier: "Summit Partner",
+    logo: "salesforce",
+    description: "Certified Salesforce consulting partner delivering Sales Cloud, Service Cloud, Marketing Cloud, and Commerce Cloud implementations.",
+    certifications: ["Platform Developer II", "Sales Cloud Consultant", "Service Cloud Consultant", "Marketing Cloud Consultant"],
+    color: "from-[#00A1E0] to-[#0070D2]"
+  },
+  {
+    name: "Amazon Web Services",
+    tier: "Advanced Partner",
+    logo: "aws",
+    description: "AWS Advanced Consulting Partner with expertise in cloud migration, serverless architecture, and managed services.",
+    certifications: ["Solutions Architect Professional", "DevOps Engineer", "Security Specialty", "Database Specialty"],
+    color: "from-[#FF9900] to-[#FF6600]"
+  },
+  {
+    name: "Microsoft Azure",
+    tier: "Gold Partner",
+    logo: "azure",
+    description: "Microsoft Gold Partner specializing in Azure cloud solutions, Microsoft 365, and enterprise integrations.",
+    certifications: ["Azure Solutions Architect Expert", "Azure DevOps Engineer", "Azure Security Engineer", "Power Platform"],
+    color: "from-[#0078D4] to-[#00BCF2]"
+  },
+  {
+    name: "Google Cloud",
+    tier: "Partner",
+    logo: "gcp",
+    description: "Google Cloud Partner delivering GCP solutions, data analytics, and machine learning implementations.",
+    certifications: ["Cloud Architect", "Data Engineer", "ML Engineer", "Cloud Security"],
+    color: "from-[#4285F4] to-[#34A853]"
+  }
+];
+
+const integrationPartners = [
+  {
+    name: "ServiceNow",
+    description: "ITSM and enterprise workflow automation",
+    logo: "servicenow"
+  },
+  {
+    name: "MuleSoft",
+    description: "API-led connectivity and integration",
+    logo: "mulesoft"
+  },
+  {
+    name: "Tableau",
+    description: "Data visualization and business intelligence",
+    logo: "tableau"
+  },
+  {
+    name: "Snowflake",
+    description: "Cloud data warehousing and analytics",
+    logo: "snowflake"
+  },
+  {
+    name: "Databricks",
+    description: "Unified analytics and AI platform",
+    logo: "databricks"
+  },
+  {
+    name: "MongoDB",
+    description: "Modern database solutions",
+    logo: "mongodb"
+  },
+  {
+    name: "Twilio",
+    description: "Communication APIs and engagement",
+    logo: "twilio"
+  },
+  {
+    name: "Stripe",
+    description: "Payment processing and financial infrastructure",
+    logo: "stripe"
+  }
+];
+
+const technologyStack = [
+  {
+    category: "Frontend",
+    technologies: ["React", "Vue.js", "Angular", "Next.js", "Astro", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    category: "Backend",
+    technologies: ["Node.js", "Python", "Java", "Go", ".NET", "Ruby on Rails", "PHP"]
+  },
+  {
+    category: "Mobile",
+    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Xamarin"]
+  },
+  {
+    category: "Database",
+    technologies: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch", "DynamoDB"]
+  },
+  {
+    category: "DevOps",
+    technologies: ["Docker", "Kubernetes", "Terraform", "Jenkins", "GitHub Actions", "GitLab CI"]
+  },
+  {
+    category: "AI/ML",
+    technologies: ["TensorFlow", "PyTorch", "OpenAI", "LangChain", "Hugging Face", "scikit-learn"]
+  }
+];
+
+const partnerBenefits = [
+  {
+    icon: "expertise",
+    title: "Deep Expertise",
+    description: "Our certified professionals bring years of hands-on experience with partner technologies."
+  },
+  {
+    icon: "support",
+    title: "Priority Support",
+    description: "As certified partners, we get priority access to technical support and resources."
+  },
+  {
+    icon: "early",
+    title: "Early Access",
+    description: "Get access to beta features and new capabilities before general availability."
+  },
+  {
+    icon: "pricing",
+    title: "Partner Pricing",
+    description: "Take advantage of special partner pricing and licensing options."
+  }
+];
+---
+
+<Layout
+  title="Technology Partners - Our Alliance Network | Vireonix Technologies"
+  description="Discover Vireonix Technologies' strategic partnerships with Salesforce, AWS, Microsoft Azure, and Google Cloud. Our certified team delivers best-in-class enterprise solutions."
+>
+  <Header />
+
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary/5 via-white to-secondary/5 py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <nav class="flex items-center space-x-2 text-sm text-gray-500 mb-8">
+          <a href="/" class="hover:text-primary transition-colors">Home</a>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span class="text-gray-900">Partners</span>
+        </nav>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-6">
+              Strategic Technology Partnerships
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+              We've built strategic alliances with the world's leading technology providers to deliver best-in-class solutions for our clients.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-medium text-gray-700">200+ Certifications</span>
+              </div>
+              <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-medium text-gray-700">4 Cloud Platforms</span>
+              </div>
+              <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-medium text-gray-700">25+ Years Experience</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white rounded-2xl p-6 shadow-lg flex items-center justify-center h-32">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-[#00A1E0]">Salesforce</div>
+                  <div class="text-xs text-gray-500 mt-1">Summit Partner</div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-lg flex items-center justify-center h-32">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-[#FF9900]">AWS</div>
+                  <div class="text-xs text-gray-500 mt-1">Advanced Partner</div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-lg flex items-center justify-center h-32">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-[#0078D4]">Azure</div>
+                  <div class="text-xs text-gray-500 mt-1">Gold Partner</div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-lg flex items-center justify-center h-32">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-[#4285F4]">Google</div>
+                  <div class="text-xs text-gray-500 mt-1">Cloud Partner</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premier Partners -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Premier Technology Partners
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Strategic partnerships with industry-leading platforms to deliver enterprise-grade solutions
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {technologyPartners.map((partner) => (
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
+              <div class={`h-2 bg-gradient-to-r ${partner.color}`}></div>
+              <div class="p-8">
+                <div class="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-gray-900">{partner.name}</h3>
+                    <span class="inline-block mt-1 px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+                      {partner.tier}
+                    </span>
+                  </div>
+                </div>
+                <p class="text-gray-600 mb-6">{partner.description}</p>
+                <div>
+                  <h4 class="text-sm font-semibold text-gray-900 mb-3">Our Certifications:</h4>
+                  <div class="flex flex-wrap gap-2">
+                    {partner.certifications.map((cert) => (
+                      <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                        {cert}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Benefits -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Why Partner Relationships Matter
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Our strategic partnerships translate into tangible benefits for your projects
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {partnerBenefits.map((benefit) => (
+            <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow text-center">
+              <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
+                {benefit.icon === "expertise" && (
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                )}
+                {benefit.icon === "support" && (
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                )}
+                {benefit.icon === "early" && (
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )}
+                {benefit.icon === "pricing" && (
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                )}
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+              <p class="text-gray-600">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Partners -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Integration Partners
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            We work with leading SaaS platforms to build integrated enterprise solutions
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {integrationPartners.map((partner) => (
+            <div class="bg-gray-50 rounded-xl p-6 hover:bg-primary/5 transition-colors text-center group">
+              <div class="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors mb-2">
+                {partner.name}
+              </div>
+              <p class="text-sm text-gray-600">{partner.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-gray-900 mb-4">
+            Our Technology Stack
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            We leverage best-in-class technologies across the full development spectrum
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {technologyStack.map((stack) => (
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">{stack.category}</h3>
+              <div class="flex flex-wrap gap-2">
+                {stack.technologies.map((tech) => (
+                  <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Become a Partner CTA -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-primary to-secondary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-white mb-6">
+          Become a Partner
+        </h2>
+        <p class="text-xl text-white/90 mb-8">
+          Interested in partnering with Vireonix Technologies? We're always looking to expand our ecosystem.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+          Contact Us
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://vireonixtech.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Partners",
+        "item": "https://vireonixtech.com/partners"
+      }
+    ]
+  })} />
+</Layout>

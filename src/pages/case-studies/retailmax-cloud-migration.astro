@@ -1,0 +1,135 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  title="RetailMax: Enterprise Cloud Migration with Zero Downtime"
+  description="How we migrated RetailMax's entire infrastructure of 500+ VMs to AWS with zero downtime and achieved 45% cost reduction."
+  client="RetailMax"
+  industry="Retail"
+  services={["Cloud Migration", "DevOps", "Infrastructure Optimization"]}
+  duration="8 months"
+  results={[
+    { metric: "Cost Reduction", value: "45%" },
+    { metric: "Downtime", value: "Zero" },
+    { metric: "VMs Migrated", value: "500+" },
+    { metric: "Performance", value: "+60%" }
+  ]}
+  technologies={["AWS", "Terraform", "Kubernetes", "Docker", "Jenkins", "Ansible", "PostgreSQL", "Redis", "CloudWatch"]}
+  challenge="RetailMax, a national retail chain with 200+ locations, was running their entire IT infrastructure on aging on-premises servers. They faced escalating maintenance costs, inability to scale for Black Friday traffic spikes, and a 3-year hardware refresh cycle that would cost $4M. They needed to migrate to the cloud without disrupting operations during their busiest retail seasons."
+  solution="We executed a comprehensive cloud migration to AWS using a phased approach that prioritized business continuity. The migration included re-platforming critical applications for cloud-native benefits while lift-and-shifting stable legacy systems. We implemented infrastructure as code, containerization, and modern DevOps practices to ensure long-term operational excellence."
+>
+  <h3>Migration Strategy</h3>
+
+  <h4>Phase 1: Foundation & Landing Zone (Month 1-2)</h4>
+  <p>
+    Before migrating any workloads, we established a secure, well-architected AWS foundation:
+  </p>
+  <ul>
+    <li><strong>Multi-Account Strategy:</strong> Separate accounts for production, staging, development, and shared services</li>
+    <li><strong>Network Architecture:</strong> Transit Gateway hub connecting VPCs with Direct Connect to on-premises</li>
+    <li><strong>Security Baseline:</strong> IAM policies, Security Hub, GuardDuty, and Config rules</li>
+    <li><strong>Infrastructure as Code:</strong> All infrastructure defined in Terraform modules</li>
+  </ul>
+
+  <h4>Phase 2: Non-Critical Workloads (Month 2-4)</h4>
+  <p>
+    We started with lower-risk systems to validate our migration playbooks:
+  </p>
+  <ul>
+    <li>Development and test environments</li>
+    <li>Internal tools and reporting systems</li>
+    <li>Backup and disaster recovery infrastructure</li>
+  </ul>
+
+  <h4>Phase 3: Business Applications (Month 4-6)</h4>
+  <p>
+    Core business applications required careful planning and testing:
+  </p>
+  <ul>
+    <li><strong>E-commerce Platform:</strong> Containerized and deployed to EKS with auto-scaling</li>
+    <li><strong>Inventory Management:</strong> Re-platformed to use Aurora PostgreSQL and ElastiCache</li>
+    <li><strong>POS Integration:</strong> Maintained hybrid connectivity during transition</li>
+  </ul>
+
+  <h4>Phase 4: Critical Infrastructure (Month 6-8)</h4>
+  <p>
+    The most critical systems required zero-downtime migration techniques:
+  </p>
+  <ul>
+    <li><strong>Database Migration:</strong> AWS DMS with continuous replication, sub-second cutover</li>
+    <li><strong>Application Cutover:</strong> Blue-green deployment with automated rollback</li>
+    <li><strong>DNS Switching:</strong> Weighted routing for gradual traffic shift</li>
+  </ul>
+
+  <h3>Technical Implementation</h3>
+
+  <h4>Containerization & Kubernetes</h4>
+  <p>
+    We containerized 80% of applications for improved scalability and resource efficiency:
+  </p>
+  <ul>
+    <li>Standardized Docker images with security scanning</li>
+    <li>Amazon EKS for container orchestration</li>
+    <li>Horizontal Pod Autoscaling based on custom metrics</li>
+    <li>GitOps deployment with ArgoCD</li>
+  </ul>
+
+  <h4>Database Optimization</h4>
+  <p>
+    Database migrations delivered significant performance improvements:
+  </p>
+  <ul>
+    <li>Migrated from self-managed PostgreSQL to Aurora with read replicas</li>
+    <li>Implemented ElastiCache for session management and caching</li>
+    <li>Query optimization reduced average response time by 40%</li>
+  </ul>
+
+  <h4>Auto-Scaling Architecture</h4>
+  <p>
+    The new architecture handles traffic spikes automatically:
+  </p>
+  <ul>
+    <li>Application tier scales from 10 to 100+ pods in minutes</li>
+    <li>Aurora auto-scales storage and read capacity</li>
+    <li>CloudFront caches static content at edge locations</li>
+    <li>Black Friday traffic handled without manual intervention</li>
+  </ul>
+
+  <h3>DevOps Transformation</h3>
+  <p>
+    Beyond migration, we implemented modern DevOps practices:
+  </p>
+  <ul>
+    <li><strong>CI/CD Pipeline:</strong> Jenkins pipelines for automated testing and deployment</li>
+    <li><strong>Infrastructure as Code:</strong> 100% of infrastructure managed via Terraform</li>
+    <li><strong>Monitoring:</strong> CloudWatch, Prometheus, and Grafana for comprehensive observability</li>
+    <li><strong>Incident Response:</strong> PagerDuty integration with automated runbooks</li>
+  </ul>
+
+  <h3>Cost Optimization</h3>
+  <p>
+    We achieved 45% cost reduction through multiple strategies:
+  </p>
+  <ul>
+    <li><strong>Right-Sizing:</strong> Instance types matched to actual workload requirements</li>
+    <li><strong>Reserved Instances:</strong> 1-year reservations for predictable workloads</li>
+    <li><strong>Spot Instances:</strong> Batch processing and dev environments on Spot</li>
+    <li><strong>Auto-Scaling:</strong> Scale down during off-peak hours</li>
+    <li><strong>Storage Optimization:</strong> S3 lifecycle policies and EBS optimization</li>
+  </ul>
+
+  <h3>Results</h3>
+  <ul>
+    <li><strong>Zero Downtime:</strong> All migrations completed without customer-facing outages</li>
+    <li><strong>45% Cost Reduction:</strong> From $1.2M to $660K annual infrastructure costs</li>
+    <li><strong>60% Performance Improvement:</strong> Page load times reduced from 3s to 1.2s</li>
+    <li><strong>99.99% Availability:</strong> Up from 99.5% with on-premises infrastructure</li>
+    <li><strong>10x Deployment Frequency:</strong> From monthly to multiple deployments per day</li>
+  </ul>
+
+  <blockquote>
+    "The Vireonix team executed flawlessly. We migrated our entire infrastructure during our second-busiest retail quarter with zero customer impact. The cost savings alone justified the project, but the improved performance and scalability have been transformative for our business."
+    <cite>— CTO, RetailMax</cite>
+  </blockquote>
+</CaseStudyLayout>

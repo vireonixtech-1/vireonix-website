@@ -1,0 +1,207 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  author: string;
+  authorRole: string;
+  category: string;
+  readTime: string;
+  image?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  author,
+  authorRole,
+  category,
+  readTime,
+  image = '/og-image.jpg',
+  tags = []
+} = Astro.props;
+
+const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+
+// Generate Article Schema with enhanced AEO properties
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": image,
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "jobTitle": authorRole,
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Vireonix Technologies LLC"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vireonix Technologies LLC",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vireonixtech.com/Untitled design.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": Astro.url.href
+  },
+  "articleSection": category,
+  "keywords": tags.join(", "),
+  "wordCount": 1500,
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".article-intro", ".key-takeaway"]
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US"
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://vireonixtech.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://vireonixtech.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": title
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} ogImage={image}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-gray-500 mb-8">
+          <a href="/" class="hover:text-primary">Home</a>
+          <span>/</span>
+          <a href="/blog" class="hover:text-primary">Blog</a>
+          <span>/</span>
+          <span class="text-gray-700">{title}</span>
+        </nav>
+
+        <!-- Category & Read Time -->
+        <div class="flex items-center gap-4 mb-6">
+          <span class="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
+            {category}
+          </span>
+          <span class="text-gray-500 text-sm">{readTime} read</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-6 leading-tight">
+          {title}
+        </h1>
+
+        <!-- Description -->
+        <p class="text-xl text-gray-600 mb-8">
+          {description}
+        </p>
+
+        <!-- Author & Date -->
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold">
+            {author.split(' ').map(n => n[0]).join('')}
+          </div>
+          <div>
+            <div class="font-semibold text-gray-900">{author}</div>
+            <div class="text-sm text-gray-500">{authorRole} · {formattedDate}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-12">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none prose-headings:font-montserrat prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+          <slot />
+        </div>
+
+        <!-- Tags -->
+        {tags.length > 0 && (
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <h4 class="text-sm font-semibold text-gray-500 mb-4">TAGS</h4>
+            <div class="flex flex-wrap gap-2">
+              {tags.map(tag => (
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Author Bio -->
+        <div class="mt-12 p-8 bg-gray-50 rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+              {author.split(' ').map(n => n[0]).join('')}
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 mb-1">Written by {author}</h4>
+              <p class="text-gray-600 text-sm mb-3">{authorRole} at Vireonix Technologies</p>
+              <p class="text-gray-600">Expert in enterprise technology solutions with years of experience helping businesses transform through innovative software development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Articles CTA -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Want to Learn More?</h3>
+        <p class="text-gray-600 mb-8">Explore more insights from our technology experts</p>
+        <a href="/blog" class="bg-button-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
+          View All Articles
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

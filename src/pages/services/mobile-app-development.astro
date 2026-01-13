@@ -1,0 +1,139 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Mobile App Development Services | iOS & Android | Vireonix Technologies",
+  description: "Expert mobile app development services for iOS, Android, and cross-platform. React Native, Flutter, Swift, Kotlin. 300+ apps delivered. Get a free consultation.",
+  serviceName: "Mobile App Development",
+  serviceTagline: "Build powerful, scalable mobile applications that users love. From concept to App Store, we deliver exceptional mobile experiences.",
+  heroIcon: `<svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" /></svg>`,
+  gradientFrom: "primary",
+  gradientTo: "accent",
+  features: [
+    {
+      title: "iOS App Development",
+      description: "Native iOS applications built with Swift and SwiftUI, optimized for iPhone and iPad with seamless Apple ecosystem integration.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Android App Development",
+      description: "High-performance Android apps using Kotlin and Jetpack Compose, compatible across the diverse Android device ecosystem.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Cross-Platform Development",
+      description: "Cost-effective React Native and Flutter solutions that deliver native-like performance on both iOS and Android from a single codebase.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "UI/UX Design for Mobile",
+      description: "User-centered mobile design that follows platform guidelines while creating engaging, intuitive experiences that drive user retention.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "App Store Optimization",
+      description: "Strategic ASO services to improve your app's visibility, downloads, and rankings on the App Store and Google Play.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    },
+    {
+      title: "Maintenance & Support",
+      description: "Ongoing app maintenance, performance monitoring, security updates, and feature enhancements to keep your app competitive.",
+      icon: `<svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L3 7v11a2 2 0 002 2h10a2 2 0 002-2V7l-7-5z"/></svg>`
+    }
+  ],
+  technologies: ["React Native", "Flutter", "Swift", "Kotlin", "SwiftUI", "Jetpack Compose", "Firebase", "GraphQL", "REST APIs", "Push Notifications", "In-App Purchases", "Analytics"],
+  benefits: [
+    { stat: "300+", label: "Apps Delivered" },
+    { stat: "4.8", label: "Avg. App Store Rating" },
+    { stat: "50M+", label: "Total Downloads" },
+    { stat: "98%", label: "Client Satisfaction" }
+  ],
+  faqs: [
+    {
+      question: "How long does it take to develop a mobile app?",
+      answer: "Development timeline varies based on complexity. A simple app takes 2-3 months, while complex enterprise apps may take 6-9 months. We provide detailed timelines after understanding your requirements during the discovery phase."
+    },
+    {
+      question: "Should I build native or cross-platform?",
+      answer: "It depends on your requirements. Native apps offer the best performance and platform-specific features. Cross-platform (React Native/Flutter) is cost-effective when you need both iOS and Android with similar functionality. We help you choose based on your budget, timeline, and feature needs."
+    },
+    {
+      question: "What is included in your mobile app development service?",
+      answer: "Our service includes UI/UX design, frontend and backend development, API integration, testing, App Store/Play Store submission, and post-launch support. We handle the entire lifecycle from concept to deployment."
+    },
+    {
+      question: "Do you provide app maintenance after launch?",
+      answer: "Yes, we offer comprehensive maintenance packages including bug fixes, security updates, OS compatibility updates, performance optimization, and feature enhancements. We recommend ongoing support to keep your app competitive."
+    },
+    {
+      question: "How do you ensure app security?",
+      answer: "We implement industry-standard security practices including encrypted data storage, secure API communication (SSL/TLS), authentication protocols (OAuth, biometrics), code obfuscation, and regular security audits. We also ensure compliance with GDPR, HIPAA, and other regulations as needed."
+    }
+  ],
+  relatedServices: [
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "UI/UX Design", href: "/services/ui-ux-design" },
+    { name: "Cloud Migration", href: "/services/cloud-migration" },
+    { name: "Generative AI", href: "/services/generative-ai" }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData}>
+  <!-- Additional content specific to Mobile App Development -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900 mb-6">
+            Why Choose Vireonix for Mobile Development?
+          </h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">25+ Years of Experience</h3>
+                <p class="text-gray-600">Deep expertise in mobile development since the early days of iOS and Android.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Agile Development</h3>
+                <p class="text-gray-600">Iterative sprints with regular demos ensure your app evolves with your vision.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Performance Focused</h3>
+                <p class="text-gray-600">Optimized apps that launch fast, run smooth, and minimize battery consumption.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-8 text-center">
+          <div class="text-6xl mb-4">📱</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Featured App</h3>
+          <p class="text-gray-600 mb-4">FitTrack Pro - A fitness app with AI-powered recommendations serving 500K+ users</p>
+          <div class="flex justify-center gap-4 text-sm">
+            <span class="px-3 py-1 bg-white rounded-full">4.8 Rating</span>
+            <span class="px-3 py-1 bg-white rounded-full">500K+ Users</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
