@@ -1,0 +1,23 @@
+/* TEAM */
+Company: Vireonix Technologies LLC
+Location: Cumming, Georgia, USA
+Contact: hr@vireonixtech.com
+Phone: +1 (304) 216-9092
+
+/* SITE */
+Last update: 2025/01/13
+Language: English
+Doctype: HTML5
+Framework: Astro
+CSS: Tailwind CSS
+IDE: Visual Studio Code
+
+/* STANDARDS */
+HTML5, CSS3, JavaScript ES6+
+WCAG 2.1 AA Accessibility
+Schema.org Structured Data
+Open Graph Protocol
+
+/* CERTIFICATIONS */
+ISO 27001 - Information Security
+SOC 2 Type II - Security & Availability

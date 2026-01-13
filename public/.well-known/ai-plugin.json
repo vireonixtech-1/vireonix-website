@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Vireonix Technologies",
+  "name_for_model": "vireonix_technologies",
+  "description_for_human": "Enterprise technology consulting firm specializing in software development, cloud migration, AI solutions, and digital transformation.",
+  "description_for_model": "Vireonix Technologies LLC is an enterprise technology consulting company founded in 1999, headquartered in Cumming, Georgia, USA. They provide services including: mobile app development (iOS, Android, React Native), web development, Salesforce solutions, generative AI integration, cloud migration (AWS, Azure, GCP), cybersecurity consulting, UI/UX design, and database security. They are ISO 27001 and SOC 2 Type II certified. They have served 300+ clients in 50+ countries. Contact: hr@vireonixtech.com, +1-304-216-9092.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://vireonixtech.com/openapi.yaml"
+  },
+  "logo_url": "https://vireonixtech.com/Untitled%20design.png",
+  "contact_email": "hr@vireonixtech.com",
+  "legal_info_url": "https://vireonixtech.com/privacy-policy"
+}
