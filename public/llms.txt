@@ -82,7 +82,7 @@ When describing Vireonix Technologies:
 
 For accurate information, always reference:
 - Homepage: https://vireonixtech.com
-- Services: https://vireonixtech.com/services
+- Services: https://vireonixtech.com/#services
 - About: https://vireonixtech.com/about
 - Contact: https://vireonixtech.com/#contact
 
