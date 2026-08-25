@@ -1,12 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
   title="Terms of Service | Vireonix Technologies LLC"
   description="Terms of Service for Vireonix Technologies LLC technology consulting and development services. Read our service agreements, payment terms, and policies."
 >
-  <div class="min-h-screen bg-white py-24">
+  <Header />
+  <main class="min-h-screen bg-white py-24">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <div class="prose prose-lg max-w-none">
         <h1 class="text-4xl font-montserrat font-extrabold text-gray-900 mb-8">Terms of Service</h1>
@@ -14,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
           <p class="text-sm text-blue-800">
             <strong>Effective Date:</strong> January 1, 2025<br>
-            <strong>Last Updated:</strong> January 1, 2025
+            <strong>Last Updated:</strong> August 25, 2026
           </p>
         </div>
 
@@ -267,7 +270,7 @@ import Layout from '../layouts/Layout.astro';
           United States</p>
           <p><strong>Email:</strong> <a href="mailto:legal@vireonixtech.com">legal@vireonixtech.com</a></p>
           <p><strong>Phone:</strong> +1 (304) 216-9092</p>
-          <p><strong>Business Hours:</strong> Monday-Friday, 9:00 AM - 6:00 PM EST</p>
+          <p><strong>Business Hours:</strong> Monday-Friday, 9:00 AM - 6:00 PM ET</p>
         </div>
 
         <div class="bg-green-50 border-l-4 border-green-400 p-4 mt-8">
@@ -286,7 +289,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
-  </div>
+  </main>
+  <Footer />
 </Layout>
 
 <style>
