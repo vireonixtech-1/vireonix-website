@@ -158,4 +158,4 @@ npm run dev
 
 ## License
 
-Copyright © 2025 Vireonix Technologies LLC. All rights reserved.
+Copyright © 2026 Vireonix Technologies LLC. All rights reserved.
