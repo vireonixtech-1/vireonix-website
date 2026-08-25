@@ -25,7 +25,7 @@
 
 ## About
 
-Official website for **Vireonix Technologies LLC** - an enterprise technology consulting firm founded in 1999, headquartered in Cumming, Georgia, USA. We specialize in digital transformation, software development, and IT consulting services.
+Official website for **Vireonix Technologies LLC** - an enterprise technology consulting firm founded in 1999, headquartered in Alpharetta, Georgia, USA. We specialize in digital transformation, software development, and IT consulting services.
 
 ### Company Highlights
 
@@ -152,7 +152,7 @@ npm run dev
 - **Website:** [vireonixtech.com](https://vireonixtech.com)
 - **Email:** hr@vireonixtech.com
 - **Phone:** +1 (304) 216-9092
-- **Location:** 670 Calvet Way, Cumming, GA 30041, USA
+- **Location:** 11535 Park Woods Circle, Suite B2-02, Alpharetta, GA 30005, USA
 
 ---
 
