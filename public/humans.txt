@@ -1,11 +1,11 @@
 /* TEAM */
 Company: Vireonix Technologies LLC
-Location: Cumming, Georgia, USA
+Location: Alpharetta, Georgia, USA
 Contact: hr@vireonixtech.com
 Phone: +1 (304) 216-9092
 
 /* SITE */
-Last update: 2025/01/13
+Last update: 2026/08/25
 Language: English
 Doctype: HTML5
 Framework: Astro
