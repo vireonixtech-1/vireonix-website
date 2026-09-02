@@ -151,6 +151,11 @@
                 I agree to the <a href="/terms-of-service" class="text-accent hover:text-white transition-colors">Terms of Service</a> and <a href="/privacy-policy" class="text-accent hover:text-white transition-colors">Privacy Policy</a>. I consent to receive communications about my project.
               </label>
             </div>
+
+
+            <div id="form-status" class="hidden p-4 rounded-xl mb-6">
+              <div id="status-message" class="text-sm font-medium"></div>
+            </div>
             
             <!-- Submit Button -->
             <button 
@@ -165,6 +170,23 @@
               </svg>
             </button>
           </form>
+
+          <!-- Success State -->
+          <div id="success-panel" class="hidden success-panel-anim flex-col items-center justify-center text-center py-10">
+            <svg class="checkmark" viewBox="0 0 52 52">
+              <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <h3 class="text-2xl font-bold text-white mt-6 mb-2">Message Sent!</h3>
+            <p id="success-message" class="text-gray-300 max-w-sm mx-auto mb-8">We'll get back to you within 2 days.</p>
+            <button
+              type="button"
+              id="send-another-btn"
+              class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300"
+            >
+              Send Another Message
+            </button>
+          </div>
         </div>
       </div>
       
@@ -280,36 +302,59 @@
     </div>
   </div>
   
-  <!-- Background Elements -->
-  <div class="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-10 left-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
 </section>
+
+<style>
+  .success-panel-anim {
+    animation: successPopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  @keyframes successPopIn {
+    0% { opacity: 0; transform: scale(0.92) translateY(12px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .checkmark {
+    width: 72px;
+    height: 72px;
+    display: block;
+  }
+
+  .checkmark-circle {
+    stroke: #22c55e;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: checkmarkStroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+
+  .checkmark-check {
+    stroke: #22c55e;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: checkmarkStroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+  }
+
+  @keyframes checkmarkStroke {
+    100% { stroke-dashoffset: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .success-panel-anim,
+    .checkmark-circle,
+    .checkmark-check {
+      animation-duration: 0.01ms !important;
+    }
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // ===== EMAILJS CONFIGURATION =====
-    // IMPORTANT: Replace these placeholder values with your actual EmailJS credentials
-    // Get your credentials at: https://www.emailjs.com/
-    // 1. Create an account at EmailJS
-    // 2. Create an email service (Gmail, Outlook, etc.)
-    // 3. Create an email template
-    // 4. Get your Public Key from Account > API Keys
-
-    const EMAIL_CONFIG = {
-      serviceID: 'YOUR_SERVICE_ID',     // e.g., 'service_abc123' - from EmailJS Dashboard > Email Services
-      templateID: 'YOUR_TEMPLATE_ID',   // e.g., 'template_xyz789' - from EmailJS Dashboard > Email Templates
-      publicKey: 'YOUR_PUBLIC_KEY'      // e.g., 'AbCdEfGhIjKlMnOp' - from EmailJS Dashboard > Account > API Keys
-    };
-
-    // Initialize EmailJS (only if configured)
-    const isConfigured = EMAIL_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY' &&
-                         EMAIL_CONFIG.serviceID !== 'YOUR_SERVICE_ID' &&
-                         EMAIL_CONFIG.templateID !== 'YOUR_TEMPLATE_ID';
-
-    if (isConfigured) {
-      emailjs.init(EMAIL_CONFIG.publicKey);
-    }
-    
     // ===== DOM ELEMENTS =====
     const form = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -317,18 +362,43 @@
     const submitSpinner = document.getElementById('submit-spinner');
     const formStatus = document.getElementById('form-status');
     const statusMessage = document.getElementById('status-message');
-    
+    const successPanel = document.getElementById('success-panel');
+    const successMessage = document.getElementById('success-message');
+    const sendAnotherBtn = document.getElementById('send-another-btn');
+
+    // ===== SUCCESS / FORM SWAP =====
+
+    function showSuccessPanel(message) {
+      formStatus.classList.add('hidden');
+      form.classList.add('hidden');
+      if (message) successMessage.textContent = message;
+      successPanel.classList.remove('hidden');
+      successPanel.classList.add('flex');
+    }
+
+    function showForm() {
+      successPanel.classList.add('hidden');
+      successPanel.classList.remove('flex');
+      form.classList.remove('hidden');
+    }
+
+    if (sendAnotherBtn) {
+      sendAnotherBtn.addEventListener('click', showForm);
+    }
+
     // ===== UTILITY FUNCTIONS =====
-    
+
+    let statusHideTimeout;
+
     function showStatus(message, type = 'success') {
       formStatus.classList.remove('hidden');
       statusMessage.textContent = message;
-      
+
       // Remove existing status classes
       formStatus.classList.remove('bg-green-500/20', 'border-green-500/30', 'text-green-300');
       formStatus.classList.remove('bg-red-500/20', 'border-red-500/30', 'text-red-300');
       formStatus.classList.remove('bg-blue-500/20', 'border-blue-500/30', 'text-blue-300');
-      
+
       // Add appropriate status classes
       if (type === 'success') {
         formStatus.classList.add('bg-green-500/20', 'border-green-500/30', 'text-green-300', 'border');
@@ -337,9 +407,11 @@
       } else if (type === 'info') {
         formStatus.classList.add('bg-blue-500/20', 'border-blue-500/30', 'text-blue-300', 'border');
       }
-      
-      // Auto-hide after 5 seconds
-      setTimeout(() => {
+
+      // Auto-hide after 5 seconds. Clear any timer from a prior call (e.g. the
+      // "Sending..." status) so it can't hide a message it didn't schedule.
+      clearTimeout(statusHideTimeout);
+      statusHideTimeout = setTimeout(() => {
         formStatus.classList.add('hidden');
       }, 5000);
     }
@@ -409,49 +481,23 @@
           return;
         }
         
-        // Check EmailJS configuration
-        if (!isConfigured) {
-          showStatus('Contact form is being set up. Please email us directly at hr@vireonixtech.com or call +1 (304) 216-9092', 'error');
-          console.warn('EmailJS not configured. See Contact.astro for setup instructions.');
-
-          // Open email client as fallback
-          const subject = encodeURIComponent(`Project Inquiry from ${data.firstName} ${data.lastName}`);
-          const body = encodeURIComponent(`Name: ${data.firstName} ${data.lastName}\nEmail: ${data.email}\nPhone: ${data.phone || 'Not provided'}\nCompany: ${data.company || 'Not provided'}\nService: ${data.service || 'Not specified'}\nBudget: ${data.budget || 'Not specified'}\n\nMessage:\n${data.message}`);
-          window.open(`mailto:hr@vireonixtech.com?subject=${subject}&body=${body}`, '_blank');
-          return;
-        }
-        
         // Set loading state
         setLoadingState(true);
         showStatus('Sending your message...', 'info');
-        
+
         try {
-          // Prepare email template parameters
-          const templateParams = {
-            from_name: `${data.firstName} ${data.lastName}`,
-            from_email: data.email,
-            phone: data.phone || 'Not provided',
-            company: data.company || 'Not provided',
-            service: data.service || 'Not specified',
-            budget: data.budget || 'Not specified',
-            message: data.message,
-            to_name: 'Vireonix Technologies LLC Team',
-            reply_to: data.email
-          };
-          
-          // Send email via EmailJS
-          const response = await emailjs.send(
-            EMAIL_CONFIG.serviceID,
-            EMAIL_CONFIG.templateID,
-            templateParams,
-            EMAIL_CONFIG.publicKey
-          );
-          
-          // Success handling
-          if (response.status === 200) {
-            showStatus('✅ Message sent successfully! We\'ll get back to you within 2 hours.', 'success');
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.success) {
             form.reset();
-            
+            showSuccessPanel(result.message);
+
             // Optional: Track successful submission
             if (typeof gtag !== 'undefined') {
               gtag('event', 'form_submit', {
@@ -460,28 +506,13 @@
               });
             }
           } else {
-            throw new Error(`EmailJS returned status: ${response.status}`);
+            throw new Error(result.message || 'Failed to send message.');
           }
-          
+
         } catch (error) {
-          // Error handling
-          console.error('EmailJS Error:', error);
-          
-          let errorMessage = 'Failed to send message. Please try again or contact us directly.';
-          
-          // Handle specific error types
-          if (error.text) {
-            if (error.text.includes('rate limit')) {
-              errorMessage = 'Too many requests. Please wait a moment and try again.';
-            } else if (error.text.includes('template')) {
-              errorMessage = 'Email template error. Please contact support.';
-            } else if (error.text.includes('service')) {
-              errorMessage = 'Email service unavailable. Please try again later.';
-            }
-          }
-          
-          showStatus(`❌ ${errorMessage}`, 'error');
-          
+          console.error('Contact form error:', error);
+          showStatus(`❌ ${error.message || 'Failed to send message. Please try again or contact us directly.'}`, 'error');
+
           // Optional: Track failed submission
           if (typeof gtag !== 'undefined') {
             gtag('event', 'form_submit', {
@@ -490,22 +521,12 @@
               event_value: error.message
             });
           }
-          
+
         } finally {
           // Reset loading state
           setLoadingState(false);
         }
       });
     }
-    
-    // ===== FALLBACK ERROR HANDLING =====
-    
-    // Handle EmailJS loading errors
-    window.addEventListener('error', function(e) {
-      if (e.filename && e.filename.includes('emailjs')) {
-        console.error('EmailJS failed to load:', e);
-        showStatus('Email service unavailable. Please contact us directly.', 'error');
-      }
-    });
   });
 </script>

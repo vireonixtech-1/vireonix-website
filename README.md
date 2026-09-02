@@ -71,7 +71,7 @@ Official website for **Vireonix Technologies LLC** - an enterprise technology co
 | [Astro](https://astro.build) | Static Site Generator |
 | [Tailwind CSS](https://tailwindcss.com) | Styling |
 | [TypeScript](https://www.typescriptlang.org) | Type Safety |
-| [EmailJS](https://emailjs.com) | Contact Form |
+| [Nodemailer](https://nodemailer.com) | Contact Form (SMTP, via Vercel serverless function) |
 
 ---
 
