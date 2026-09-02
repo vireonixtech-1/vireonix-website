@@ -1,0 +1,148 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+---
+
+<BlogLayout
+  title="Mobile App Security Checklist: 15 Essential Measures"
+  description="Protect your mobile application with this comprehensive security checklist covering authentication, data protection, and compliance."
+  publishDate="2024-12-22"
+  author="David Chen"
+  authorRole="Head of Cybersecurity"
+  category="Cybersecurity"
+  readTime="7 min"
+  tags={["Mobile Security", "Cybersecurity", "OWASP", "App Development", "Compliance"]}
+>
+  <p class="lead text-xl text-gray-600 mb-8">
+    Mobile apps handle some of the most sensitive data an organization touches—payment credentials, health records, location history, private messages—yet mobile security consistently gets less attention than web application security. This checklist covers the 15 measures we consider non-negotiable for any production mobile app, organized around the OWASP Mobile Top 10.
+  </p>
+
+  <h2>Authentication & Session Management</h2>
+
+  <h3>1. Enforce Strong Authentication</h3>
+  <p>
+    Require multi-factor authentication for any app handling sensitive data, and never store passwords in plaintext—even temporarily. Support biometric authentication (Face ID, Touch ID, fingerprint) as a convenience layer on top of, not a replacement for, proper credential-based authentication.
+  </p>
+
+  <h3>2. Implement Secure Session Handling</h3>
+  <p>
+    Use short-lived access tokens with refresh token rotation rather than long-lived sessions. Invalidate sessions server-side on logout, password change, or suspected compromise—not just on the client.
+  </p>
+
+  <h3>3. Protect Against Credential Stuffing</h3>
+  <p>
+    Rate-limit authentication attempts, implement account lockout with exponential backoff, and monitor for distributed login attempts against the same account from unusual locations.
+  </p>
+
+  <h2>Data Protection</h2>
+
+  <h3>4. Encrypt Data at Rest</h3>
+  <p>
+    Use platform-provided secure storage—iOS Keychain and Android Keystore—for credentials, tokens, and sensitive data. Never store sensitive information in plain SharedPreferences, UserDefaults, or unencrypted local databases.
+  </p>
+
+  <h3>5. Encrypt Data in Transit</h3>
+  <p>
+    Enforce TLS 1.2 or higher for all network communication, with no fallback to unencrypted HTTP. Implement certificate pinning for high-sensitivity apps to prevent man-in-the-middle attacks even if a device's trust store is compromised.
+  </p>
+
+  <h3>6. Minimize Data Collection and Retention</h3>
+  <p>
+    Only collect data your app genuinely needs, and define explicit retention periods. Data you don't collect can't be breached, and minimal collection also simplifies compliance with GDPR, CCPA, and similar regulations.
+  </p>
+
+  <h3>7. Secure Local Caching</h3>
+  <p>
+    Sensitive data cached for offline use should be encrypted and cleared when the app is backgrounded or after a defined timeout, particularly for financial and healthcare applications.
+  </p>
+
+  <h2>Code & Binary Security</h2>
+
+  <h3>8. Obfuscate and Harden the Binary</h3>
+  <p>
+    Apply code obfuscation to make reverse engineering harder, and implement root/jailbreak detection to flag compromised devices—choosing whether to warn, restrict functionality, or block entirely based on your app's risk profile.
+  </p>
+
+  <h3>9. Remove Debug Code and Hardcoded Secrets</h3>
+  <p>
+    Audit release builds for debug logging, test endpoints, and hardcoded API keys or credentials before every submission. Automated scanning in CI catches most of these before they ship.
+  </p>
+
+  <h3>10. Validate All Input, Client and Server Side</h3>
+  <p>
+    Never trust client-side validation alone. Every API endpoint the app calls must independently validate and sanitize input, since a modified or jailbroken client can bypass client-side checks entirely.
+  </p>
+
+  <h2>API & Backend Security</h2>
+
+  <h3>11. Secure the API Layer</h3>
+  <p>
+    Authenticate and authorize every API call independently—don't rely on obscurity or app-store gatekeeping as security controls. Implement proper rate limiting and monitor for abnormal API usage patterns that could indicate automated abuse.
+  </p>
+
+  <h3>12. Implement Proper Session and Token Scope</h3>
+  <p>
+    Use the principle of least privilege for API tokens—a token issued for reading a user's profile shouldn't also grant write access to payment methods. Scope tokens narrowly and expire them aggressively.
+  </p>
+
+  <h2>Platform & Third-Party Risk</h2>
+
+  <h3>13. Audit Third-Party SDKs</h3>
+  <p>
+    Every analytics, advertising, or crash-reporting SDK you embed has access to a subset of your app's runtime environment and, potentially, user data. Review what data each SDK collects, keep dependencies updated, and remove SDKs that are no longer actively used.
+  </p>
+
+  <h3>14. Handle Platform Permissions Deliberately</h3>
+  <p>
+    Request only the permissions your app functionally needs, and request them contextually (at the point of use) rather than all at once at launch. Over-permissioned apps face both user trust issues and heightened breach impact if compromised.
+  </p>
+
+  <h2>Ongoing Security Practices</h2>
+
+  <h3>15. Establish a Vulnerability Response Process</h3>
+  <p>
+    Have a documented process for receiving, triaging, and patching security reports, including a clear path for security researchers to responsibly disclose findings. Mobile app updates also depend on app store review timelines, so build buffer into your incident response planning that web applications don't need to account for.
+  </p>
+
+  <h2>Putting It Into Practice</h2>
+  <p>
+    Treat this checklist as a baseline, not a ceiling—the right level of security investment depends on what your app handles. A note-taking app and a banking app both deserve the fundamentals, but a banking app needs significantly more: transaction signing, advanced fraud detection, and regular third-party penetration testing.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Risk Level</th>
+        <th>Minimum Bar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Low (content, utility apps)</td>
+        <td>Items 1-10, standard TLS, basic input validation</td>
+      </tr>
+      <tr>
+        <td>Medium (social, e-commerce)</td>
+        <td>All 15 items, plus regular dependency audits</td>
+      </tr>
+      <tr>
+        <td>High (financial, healthcare)</td>
+        <td>All 15 items, plus certificate pinning, penetration testing, and formal compliance certification (PCI-DSS, HIPAA)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    "The apps that get breached are rarely the ones missing some exotic security control—they're the ones that skipped the fundamentals because they felt like they'd slow down shipping. Build security in from day one and it's cheap. Retrofit it after a breach and it's not."
+    <cite>— David Chen, Head of Cybersecurity, Vireonix Technologies</cite>
+  </blockquote>
+
+  <div class="not-prose bg-primary/5 p-8 rounded-2xl mt-8">
+    <h3 class="text-xl font-bold text-gray-900 mb-4">Not Sure Your App Meets These Standards?</h3>
+    <p class="text-gray-600 mb-4">
+      Our security team offers comprehensive mobile app security assessments covering all 15 measures above, plus platform-specific and compliance-driven requirements.
+    </p>
+    <a href="/#contact" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+      Request a Security Assessment
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+    </a>
+  </div>
+</BlogLayout>
