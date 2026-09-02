@@ -1,0 +1,94 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  title="MediaHub Publishing: Enterprise WordPress Platform"
+  description="How we built a scalable WordPress multisite network handling 10M monthly visitors across 50+ MediaHub Publishing properties."
+  client="MediaHub Publishing"
+  industry="Media"
+  services={["WordPress Development", "Cloud Migration", "Performance Engineering"]}
+  duration="6 months"
+  results={[
+    { metric: "Visitors/Mo", value: "10M" },
+    { metric: "Sites", value: "50+" },
+    { metric: "Page Load Time", value: "-72%" },
+    { metric: "Hosting Cost", value: "-38%" }
+  ]}
+  technologies={["WordPress Multisite", "PHP 8", "MySQL", "Varnish", "Cloudflare", "AWS", "Redis", "Elasticsearch"]}
+  challenge="MediaHub Publishing operated over 50 independent WordPress sites across its network of niche publications, each hosted separately, running different plugin versions, and maintained by different freelancers. Editorial teams couldn't share content or templates across properties, page load times regularly exceeded eight seconds during traffic spikes, and a single trending story could take an entire site down. Hosting costs had crept up year over year while performance got worse, and security patching was inconsistent across the fragmented environment."
+  solution="We consolidated MediaHub's entire portfolio onto a single, purpose-built WordPress multisite network with centralized infrastructure, shared editorial tooling, and an aggressive caching architecture designed for traffic spikes. The migration ran site by site over six months with zero permanent downtime, letting editorial teams keep publishing throughout."
+>
+  <h3>Architecture & Platform Design</h3>
+  <p>
+    A single misconfigured plugin on one property had previously taken down unrelated sites sharing the same server, so isolation and shared infrastructure had to coexist by design:
+  </p>
+  <ul>
+    <li><strong>WordPress Multisite network:</strong> All 50+ properties run on a shared codebase with per-site content isolation and independent branding</li>
+    <li><strong>Centralized plugin management:</strong> A curated, security-reviewed plugin set available network-wide, eliminating the version sprawl that had caused conflicts</li>
+    <li><strong>Shared theme framework:</strong> A flexible base theme with per-site design tokens, so editorial teams get brand consistency without rebuilding templates from scratch</li>
+    <li><strong>Resource isolation:</strong> Container-level resource limits per site prevent one property's traffic spike from degrading others</li>
+  </ul>
+
+  <h3>Performance Engineering</h3>
+  <p>
+    Page speed was the most visible symptom of the old platform's problems, so it was the first thing we rebuilt around:
+  </p>
+  <ul>
+    <li><strong>Full-page caching:</strong> Varnish serves cached pages at the edge, keeping dynamic origin requests to a minimum even during traffic surges</li>
+    <li><strong>CDN offload:</strong> Cloudflare handles static assets, images, and cache invalidation globally, cutting latency for geographically distributed readers</li>
+    <li><strong>Object caching:</strong> Redis caches database query results across the network, dramatically reducing MySQL load during high-traffic events</li>
+    <li><strong>Image optimization:</strong> Automatic WebP conversion and responsive image serving cut median page weight by more than half</li>
+    <li><strong>PHP 8 upgrade:</strong> Modernized the entire codebase from legacy PHP, delivering a substantial baseline performance improvement before any caching was added</li>
+  </ul>
+
+  <h3>Scalable Infrastructure</h3>
+  <p>
+    The new AWS-based infrastructure is designed to absorb viral traffic spikes without manual intervention:
+  </p>
+  <ul>
+    <li><strong>Auto-scaling application tier:</strong> Compute capacity scales automatically when a story starts trending, then scales back down</li>
+    <li><strong>Managed database layer:</strong> Migrated from self-managed MySQL to a managed, read-replica-backed configuration for both resilience and read performance</li>
+    <li><strong>Elasticsearch-powered search:</strong> Replaced WordPress's default search with Elasticsearch, giving readers fast, relevant results across a decade of archived content</li>
+    <li><strong>Zero-downtime deployments:</strong> Blue-green deployment pipeline lets the platform team ship updates without interrupting live traffic</li>
+  </ul>
+
+  <h3>Editorial Tooling</h3>
+  <p>
+    Consolidation wasn't just an infrastructure win—it directly improved how editorial teams worked:
+  </p>
+  <ul>
+    <li><strong>Cross-site content syndication:</strong> Editors can share and republish content across properties without manual copy-paste</li>
+    <li><strong>Unified media library:</strong> Shared asset management eliminates duplicate uploads across the network</li>
+    <li><strong>Centralized SEO tooling:</strong> Consistent structured data, sitemaps, and metadata management across all 50+ sites</li>
+    <li><strong>Custom editorial dashboard:</strong> Network-wide publishing calendar and performance analytics in one place, replacing 50 separate WordPress admin logins</li>
+  </ul>
+
+  <h3>Migration Approach</h3>
+  <p>
+    With editorial teams actively publishing throughout, the migration had to be incremental rather than a single cutover:
+  </p>
+  <ul>
+    <li>Sites migrated in batches of 5-8, prioritized by traffic volume and technical complexity</li>
+    <li>Content, media, and SEO metadata migrated with automated validation to catch broken links and missing assets before go-live</li>
+    <li>DNS cutover for each site scheduled during its lowest-traffic window</li>
+    <li>Legacy hosting kept live as a fallback for two weeks post-migration per site before decommissioning</li>
+  </ul>
+
+  <h3>Results & Impact</h3>
+  <p>
+    Six months after full migration, the network handles significantly more traffic on meaningfully less infrastructure spend:
+  </p>
+  <ul>
+    <li><strong>10M monthly visitors:</strong> The network now reliably serves 10M monthly visitors across all properties combined, including sustained traffic spikes from viral stories</li>
+    <li><strong>50+ sites unified:</strong> Every property runs on the same secure, actively maintained codebase</li>
+    <li><strong>72% faster page loads:</strong> Median load time dropped from over 8 seconds to under 2.3 seconds</li>
+    <li><strong>38% lower hosting costs:</strong> Consolidated infrastructure and auto-scaling replaced 50+ separate hosting bills</li>
+    <li><strong>Zero traffic-spike outages:</strong> The network has absorbed multiple viral traffic events without downtime since migration</li>
+  </ul>
+
+  <blockquote>
+    "We used to dread a story going viral because we knew it might take the site down. Now our biggest traffic days are just good days—the platform handles it without anyone on the editorial team even noticing."
+    <cite>— Director of Digital Operations, MediaHub Publishing</cite>
+  </blockquote>
+</CaseStudyLayout>

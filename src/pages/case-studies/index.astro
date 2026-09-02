@@ -87,6 +87,30 @@ const caseStudies = [
 const featuredStudies = caseStudies.filter(c => c.featured);
 const otherStudies = caseStudies.filter(c => !c.featured);
 
+const featuredTheme: Record<string, { badge: string; accent: string; stat: string; tile: string; ring: string }> = {
+  Healthcare: {
+    badge: 'bg-secondary/20 text-secondary',
+    accent: 'text-secondary',
+    stat: 'text-secondary',
+    tile: 'from-secondary to-primary',
+    ring: 'hover:border-secondary/30',
+  },
+  Retail: {
+    badge: 'bg-accent/20 text-accent',
+    accent: 'text-accent',
+    stat: 'text-accent',
+    tile: 'from-accent to-teal-800',
+    ring: 'hover:border-accent/30',
+  },
+};
+
+const otherTheme: Record<string, { badge: string; iconBg: string; iconColor: string; stat: string }> = {
+  'Financial Services': { badge: 'bg-amber-100 text-amber-700', iconBg: 'bg-amber-100', iconColor: 'text-amber-600', stat: 'text-blue-600' },
+  Technology: { badge: 'bg-sky-100 text-sky-700', iconBg: 'bg-sky-100', iconColor: 'text-sky-600', stat: 'text-blue-600' },
+  Manufacturing: { badge: 'bg-rose-100 text-rose-700', iconBg: 'bg-rose-100', iconColor: 'text-rose-600', stat: 'text-rose-600' },
+  Media: { badge: 'bg-purple-100 text-purple-700', iconBg: 'bg-purple-100', iconColor: 'text-purple-600', stat: 'text-secondary' },
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -112,127 +136,206 @@ const breadcrumbSchema = {
 >
   <Header />
   <main>
-    <!-- Hero Section -->
-    <section class="pt-32 pb-16 bg-gradient-to-br from-dark to-gray-900 text-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <!-- Featured Case Studies -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 via-white to-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <!-- Breadcrumb -->
-        <nav class="flex justify-center items-center gap-2 text-sm text-white/60 mb-8">
-          <a href="/" class="hover:text-white">Home</a>
+        <nav class="flex items-center gap-2 text-sm text-gray-500 mb-10">
+          <a href="/" class="hover:text-primary transition-colors">Home</a>
           <span>/</span>
-          <span class="text-white">Case Studies</span>
+          <span class="text-gray-700">Case Studies</span>
         </nav>
 
-        <h1 class="text-4xl md:text-6xl font-montserrat font-extrabold mb-6">
-          Client Success Stories
-        </h1>
-        <p class="text-xl text-white/80 max-w-3xl mx-auto">
-          Real results from real projects. See how we've helped businesses across industries achieve their technology goals.
-        </p>
-      </div>
-    </section>
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wider uppercase mb-5">
+            Our Work
+          </span>
+          <h1 class="text-4xl md:text-5xl font-montserrat font-extrabold text-gray-900 mb-4">
+            Featured Projects
+          </h1>
+          <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+            Innovative solutions that drive real business impact and deliver measurable results.
+          </p>
+          <div class="flex items-center justify-center gap-1.5 mt-6">
+            <span class="w-12 h-0.5 bg-gradient-to-r from-primary to-accent rounded-full"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          </div>
+        </div>
 
-    <!-- Featured Case Studies -->
-    <section class="py-16 bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">Featured Projects</h2>
+        <!-- Featured Cards -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {featuredStudies.map(study => (
-            <a href={`/case-studies/${study.slug}`} class="group relative bg-gradient-to-br from-gray-900 to-dark rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300">
-              <div class="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <span class="text-6xl opacity-30 group-hover:opacity-50 transition-opacity">
-                  {study.industry === 'Healthcare' ? '🏥' : '🛒'}
-                </span>
-              </div>
-              <div class="p-8">
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">
-                    {study.industry}
-                  </span>
+          {featuredStudies.map(study => {
+            const theme = featuredTheme[study.industry];
+            return (
+              <a
+                href={`/case-studies/${study.slug}`}
+                class={`group relative block bg-gradient-to-br from-gray-900 to-dark rounded-3xl p-8 border border-white/5 ${theme.ring} hover:shadow-2xl transition-all duration-300`}
+              >
+                <!-- Arrow button -->
+                <div class="absolute top-8 right-8 z-10 w-10 h-10 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-white group-hover:bg-white group-hover:text-dark transition-colors duration-300">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
-                  {study.client}
-                </h3>
-                <p class="text-lg text-white/80 mb-4">{study.title}</p>
-                <p class="text-white/60 mb-6">{study.description}</p>
 
-                <div class="flex gap-6 mb-6">
+                <!-- Illustration tile -->
+                <div class={`relative h-56 rounded-2xl bg-gradient-to-br ${theme.tile} mb-8 flex items-center justify-center overflow-hidden`}>
+                  <div class="absolute -top-6 -left-6 w-28 h-28 bg-white/10 rounded-full blur-xl"></div>
+                  <div class="absolute bottom-0 right-8 w-20 h-20 bg-black/10 rounded-full blur-xl"></div>
+                  {study.industry === 'Healthcare' ? (
+                    <svg class="w-28 h-28 drop-shadow-xl" viewBox="0 0 24 24" fill="none">
+                      <path d="M6 4.5c0-.83.67-1.5 1.5-1.5h7l4 4v13c0 .83-.67 1.5-1.5 1.5h-9.5A1.5 1.5 0 0 1 6 20V4.5z" fill="white" fill-opacity="0.97"/>
+                      <path d="M14.5 3v3.5A1.5 1.5 0 0 0 16 8h3" fill="white" fill-opacity="0.7"/>
+                      <path d="M9 12h5M9 15h4" stroke="#6D28D9" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.5"/>
+                      <path d="M9.5 9.2h3M11 7.7v3" stroke="#EF4444" stroke-width="1.6" stroke-linecap="round"/>
+                      <path d="M14 15.2a3 3 0 0 1 4.5 0v1.8c0 2.1-1.5 3.3-4.5 4.3-3-1-4.5-2.2-4.5-4.3v-1.8a3 3 0 0 1 4.5 0z" fill="#06B6D4"/>
+                      <path d="M12.6 17.7l1 1 1.9-2" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  ) : (
+                    <svg class="w-28 h-28 drop-shadow-xl" viewBox="0 0 24 24" fill="none">
+                      <ellipse cx="16" cy="6" rx="4.5" ry="3" fill="white" fill-opacity="0.85"/>
+                      <ellipse cx="19.5" cy="7.5" rx="3" ry="2.2" fill="white" fill-opacity="0.7"/>
+                      <rect x="6" y="16" width="3" height="3" rx="0.6" fill="white" fill-opacity="0.35"/>
+                      <rect x="19" y="13" width="2.4" height="2.4" rx="0.5" fill="white" fill-opacity="0.35"/>
+                      <g transform="translate(2.5,2) scale(1.05)" fill="white">
+                        <path d="M3 1a1 1 0 000 2h.22l.305 1.222a1 1 0 00.01.042l1.358 5.43-.893.892C3.74 10.846 4.632 13 6.414 13H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 2H4.28l-.31-1.243A1 1 0 003 1H1z"/>
+                        <path d="M16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                      </g>
+                    </svg>
+                  )}
+                </div>
+
+                <span class={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 ${theme.badge}`}>
+                  {study.industry}
+                </span>
+                <h3 class="text-2xl font-bold text-white mb-1">{study.client}</h3>
+                <p class={`font-semibold mb-3 ${theme.accent}`}>{study.title}</p>
+                <p class="text-white/60 leading-relaxed">{study.description}</p>
+
+                <div class="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/10">
                   {study.results.map(result => (
                     <div>
-                      <div class="text-2xl font-bold text-accent">{result.value}</div>
-                      <div class="text-white/60 text-sm">{result.metric}</div>
+                      <div class={`text-3xl font-bold ${theme.stat}`}>{result.value}</div>
+                      <div class="text-white/50 text-sm mt-1">{result.metric}</div>
                     </div>
                   ))}
                 </div>
 
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-white/10">
                   {study.services.map(service => (
-                    <span class="px-2 py-1 bg-white/10 text-white/80 text-xs rounded-full">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 text-white/70 text-xs font-medium rounded-full">
+                      <span class={`w-1.5 h-1.5 rounded-full ${theme.stat.replace('text-', 'bg-')}`}></span>
                       {service}
                     </span>
                   ))}
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
 
-    <!-- All Case Studies -->
-    <section class="py-16 bg-gray-50">
+    <!-- More Success Stories -->
+    <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">More Success Stories</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {otherStudies.map(study => (
-            <a href={`/case-studies/${study.slug}`} class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-              <div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-                <span class="text-4xl opacity-30 group-hover:opacity-50 transition-opacity">
-                  {study.industry === 'Financial Services' ? '💰' :
-                   study.industry === 'Technology' ? '💻' :
-                   study.industry === 'Manufacturing' ? '🏭' : '📰'}
-                </span>
-              </div>
-              <div class="p-6">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
-                    {study.industry}
-                  </span>
+        <div class="text-center mb-14">
+          <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wider uppercase mb-5">
+            Success Stories
+          </span>
+          <h2 class="text-3xl md:text-4xl font-montserrat font-extrabold text-gray-900">
+            More Success Stories
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {otherStudies.map(study => {
+            const theme = otherTheme[study.industry];
+            return (
+              <a
+                href={`/case-studies/${study.slug}`}
+                class="group block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div class={`w-16 h-16 rounded-full ${theme.iconBg} flex items-center justify-center mb-5`}>
+                  {study.industry === 'Financial Services' && (
+                    <svg class={`w-7 h-7 ${theme.iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 1.5l8.5 4.25v1.5H1.5v-1.5L10 1.5z"/>
+                      <path d="M3 8.75h2v7H3v-7zm4 0h2v7H7v-7zm4 0h2v7h-2v-7zm4 0h2v7h-2v-7z"/>
+                      <path d="M1.5 17h17v1.5h-17V17z"/>
+                    </svg>
+                  )}
+                  {study.industry === 'Technology' && (
+                    <svg class={`w-7 h-7 ${theme.iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2 4.5A1.5 1.5 0 013.5 3h13A1.5 1.5 0 0118 4.5v8a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 012 12.5v-8zM1 16a1 1 0 011-1h16a1 1 0 011 1 1 1 0 01-1 1H2a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                  )}
+                  {study.industry === 'Manufacturing' && (
+                    <svg class={`w-7 h-7 ${theme.iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+                      <rect x="2" y="11" width="16" height="7" rx="0.5"/>
+                      <rect x="4.3" y="5" width="2.2" height="6" rx="0.4"/>
+                      <rect x="8.9" y="7.5" width="2.2" height="3.5" rx="0.4"/>
+                      <rect x="13.5" y="4" width="2.2" height="7" rx="0.4"/>
+                      <circle cx="5.4" cy="3.2" r="1" opacity="0.55"/>
+                      <circle cx="14.6" cy="2.2" r="1" opacity="0.55"/>
+                    </svg>
+                  )}
+                  {study.industry === 'Media' && (
+                    <svg class={`w-7 h-7 ${theme.iconColor}`} fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 4a1 1 0 00-1 1v10a2 2 0 002 2h10a2 2 0 002-2V8a1 1 0 00-1-1h-1V5a1 1 0 00-1-1H4zm10 4H6v8h8V8zM4 6h6v2H4V6zm0 4h2v6H4v-6z" clip-rule="evenodd"/>
+                    </svg>
+                  )}
                 </div>
+
+                <span class={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold mb-3 ${theme.badge}`}>
+                  {study.industry}
+                </span>
                 <h3 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">
                   {study.client}
                 </h3>
-                <p class="text-gray-600 text-sm mb-4">{study.title}</p>
+                <p class="text-gray-500 text-sm mb-5">{study.title}</p>
 
-                <div class="flex gap-4">
+                <div class="grid grid-cols-2 gap-3 pt-5 border-t border-gray-100">
                   {study.results.slice(0, 2).map(result => (
                     <div>
-                      <div class="text-lg font-bold text-primary">{result.value}</div>
-                      <div class="text-gray-500 text-xs">{result.metric}</div>
+                      <div class={`text-xl font-bold ${theme.stat}`}>{result.value}</div>
+                      <div class="text-gray-400 text-xs mt-0.5">{result.metric}</div>
                     </div>
                   ))}
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            );
+          })}
         </div>
-      </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-primary to-accent text-white">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Ready to Be Our Next Success Story?
-        </h2>
-        <p class="text-xl text-white/90 mb-8">
-          Let's discuss how we can help you achieve similar results for your business.
-        </p>
-        <a href="/#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
-          Start Your Project
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
+        <!-- CTA Bar -->
+        <div class="mt-16 flex flex-col md:flex-row items-center justify-between gap-6 bg-white border border-primary/20 rounded-3xl p-8 md:p-10">
+          <div class="flex items-center gap-5 text-center md:text-left">
+            <div class="hidden sm:flex w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-1">Have a project in mind?</h3>
+              <p class="text-gray-500">Let's build something amazing together. Share your idea and we'll turn it into reality.</p>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0 w-full md:w-auto">
+            <a href="/#contact" class="bg-button-gradient text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2 whitespace-nowrap">
+              Discuss Your Project
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="/case-studies" class="border border-gray-200 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 inline-flex items-center justify-center gap-2 whitespace-nowrap">
+              View All Projects
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>

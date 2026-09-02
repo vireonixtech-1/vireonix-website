@@ -1,0 +1,95 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  title="TechFlow SaaS: UI/UX Redesign & Development"
+  description="How a complete product redesign helped TechFlow SaaS increase trial signups by 65% and cut churn by 40%."
+  client="TechFlow SaaS"
+  industry="Technology"
+  services={["UI/UX Design", "Web Development", "Product Strategy"]}
+  duration="4 months"
+  results={[
+    { metric: "Signups", value: "+65%" },
+    { metric: "Churn", value: "-40%" },
+    { metric: "Time on Task", value: "-55%" },
+    { metric: "NPS Score", value: "+28pts" }
+  ]}
+  technologies={["React", "TypeScript", "Figma", "Tailwind CSS", "Next.js", "Storybook", "PostHog", "Vercel"]}
+  challenge="TechFlow SaaS had built a genuinely useful project management product, but their five-year-old interface hadn't kept pace. Trial users were bouncing before reaching an 'aha moment,' onboarding took an average of 22 minutes to complete a single core workflow, and support tickets about basic navigation made up nearly a third of inbound volume. Growth had stalled, and the product team suspected the interface itself was the bottleneck—but lacked the research or design capacity to prove it and fix it."
+  solution="We ran a research-driven redesign: usability testing and funnel analysis first, then a full design system rebuild, followed by a phased frontend rewrite in Next.js that shipped incrementally behind feature flags so existing customers never lost access to a working product. Every major design decision was validated with real users before it reached production."
+>
+  <h3>Discovery & Research</h3>
+  <p>
+    Before any pixels moved, we spent three weeks understanding exactly where users were struggling:
+  </p>
+  <ul>
+    <li><strong>Funnel analysis:</strong> Instrumented the trial signup and onboarding flow to find precisely where users dropped off</li>
+    <li><strong>Moderated usability testing:</strong> Ran sessions with 14 trial users and 10 existing customers across different plan tiers</li>
+    <li><strong>Support ticket analysis:</strong> Categorized six months of tickets to surface the most common points of confusion</li>
+    <li><strong>Competitive audit:</strong> Benchmarked onboarding and core workflows against category-leading SaaS products</li>
+  </ul>
+  <p>
+    The research converged on a clear diagnosis: the product's power-user density had made the interface intimidating for new users, and critical actions were buried three or four clicks deep in a navigation structure that had grown organically over years.
+  </p>
+
+  <h3>Information Architecture & Flow Redesign</h3>
+  <p>
+    We rebuilt the core navigation and workflows around three principles: progressive disclosure, a single primary action per screen, and a maximum three-click path to any core feature.
+  </p>
+  <ul>
+    <li><strong>Simplified navigation:</strong> Consolidated seven top-level sections into four, grouped by user intent rather than internal feature taxonomy</li>
+    <li><strong>Guided onboarding:</strong> Replaced a static welcome tour with an interactive checklist that adapts to the user's stated goal</li>
+    <li><strong>Contextual empty states:</strong> Every empty screen now teaches the next action instead of showing a blank table</li>
+  </ul>
+
+  <h3>Design System</h3>
+  <p>
+    A consistent, reusable design system was the foundation for both design velocity and a coherent product feel:
+  </p>
+  <ul>
+    <li><strong>Component library:</strong> Built in Figma and documented in Storybook, with parity enforced between design and code</li>
+    <li><strong>Accessible by default:</strong> Every component meets WCAG 2.1 AA contrast and keyboard-navigation requirements</li>
+    <li><strong>Dark mode:</strong> Designed and shipped alongside the light theme rather than retrofitted later</li>
+    <li><strong>Design tokens:</strong> Color, spacing, and typography defined as tokens shared between Figma and the Tailwind config</li>
+  </ul>
+
+  <h3>Frontend Rebuild</h3>
+  <p>
+    The legacy interface was rewritten from the ground up rather than patched, to eliminate years of accumulated technical debt:
+  </p>
+  <ul>
+    <li><strong>Next.js migration:</strong> Moved from a client-rendered SPA to Next.js with server-side rendering for faster first paint</li>
+    <li><strong>TypeScript throughout:</strong> Eliminated an entire class of runtime bugs that had been driving support tickets</li>
+    <li><strong>Feature-flagged rollout:</strong> New screens shipped behind flags, letting the team validate each surface with a subset of real traffic before full release</li>
+    <li><strong>Performance budget:</strong> Enforced Core Web Vitals thresholds in CI, cutting median page load time by more than half</li>
+  </ul>
+
+  <h3>Iterative Validation</h3>
+  <p>
+    Every major flow was tested with users before and after launch, not just once at the end:
+  </p>
+  <ul>
+    <li>Clickable Figma prototypes tested with 8-10 users per major flow before development began</li>
+    <li>Beta cohort of 200 existing customers used the rebuilt product for three weeks pre-launch</li>
+    <li>PostHog session recordings and funnel tracking validated real-world behavior post-launch</li>
+    <li>Two rapid iteration cycles addressed friction points surfaced in the beta</li>
+  </ul>
+
+  <h3>Results & Impact</h3>
+  <p>
+    The redesign shipped in phases over four months, with measurable impact visible within weeks of each release:
+  </p>
+  <ul>
+    <li><strong>65% increase in trial signups:</strong> A simplified marketing-to-product handoff and clearer value proposition on the signup screen drove conversion up significantly</li>
+    <li><strong>40% reduction in churn:</strong> Faster time-to-value in onboarding meant more trial users converted and stayed</li>
+    <li><strong>55% faster task completion:</strong> The core project-creation workflow now averages under 10 minutes, down from 22</li>
+    <li><strong>28-point NPS improvement:</strong> Customer satisfaction scores rose from 34 to 62 within the first quarter post-launch</li>
+    <li><strong>30% drop in navigation-related support tickets:</strong> Clearer information architecture resolved the single largest category of support volume</li>
+  </ul>
+
+  <blockquote>
+    "We knew our interface was holding us back, but we didn't have the research chops or design bandwidth to fix it ourselves. Vireonix brought both, and the redesign paid for itself within the first quarter through improved trial conversion alone."
+    <cite>— VP of Product, TechFlow SaaS</cite>
+  </blockquote>
+</CaseStudyLayout>

@@ -1,0 +1,104 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  title="GlobalTech Industries: Salesforce Implementation"
+  description="How an end-to-end Salesforce implementation with custom integrations helped GlobalTech Industries increase sales productivity by 40% and deliver 300% ROI."
+  client="GlobalTech Industries"
+  industry="Manufacturing"
+  services={["Salesforce Solutions", "System Integration", "Training & Change Management"]}
+  duration="7 months"
+  results={[
+    { metric: "Productivity", value: "+40%" },
+    { metric: "ROI", value: "300%" },
+    { metric: "Quote Turnaround", value: "-65%" },
+    { metric: "Adoption Rate", value: "94%" }
+  ]}
+  technologies={["Salesforce Sales Cloud", "Salesforce CPQ", "MuleSoft", "Apex", "Lightning Web Components", "Tableau CRM", "SAP Integration"]}
+  challenge="GlobalTech Industries, a mid-market industrial equipment manufacturer, ran its sales operation on a patchwork of spreadsheets, a legacy CRM nobody trusted, and manual quote generation that routed through email and phone calls to the pricing team. Sales reps spent more time chasing internal approvals than talking to customers, pricing errors were common, and leadership had no reliable visibility into pipeline health across five regional sales teams. A recent acquisition had doubled the sales org overnight, making the fragmented process untenable."
+  solution="We implemented Salesforce Sales Cloud as the single system of record for the entire sales organization, built a custom CPQ (configure-price-quote) engine tailored to GlobalTech's complex product configurations, and integrated it directly with their SAP ERP for real-time inventory and pricing data. A structured change-management program ensured the new system actually got adopted, not just deployed."
+>
+  <h3>Discovery & Process Redesign</h3>
+  <p>
+    Before configuring a single field in Salesforce, we mapped GlobalTech's actual sales process end to end—not the process on paper, but what reps and pricing teams actually did day to day:
+  </p>
+  <ul>
+    <li><strong>Stakeholder interviews:</strong> Sat with sales reps, regional managers, pricing analysts, and finance to understand every handoff and bottleneck</li>
+    <li><strong>Process mapping:</strong> Documented the lead-to-quote-to-order lifecycle across all five regional teams, surfacing inconsistencies between regions</li>
+    <li><strong>Data audit:</strong> Assessed the quality and structure of existing customer and product data ahead of migration</li>
+    <li><strong>Requirements workshops:</strong> Prioritized a phased rollout so the highest-impact capabilities shipped first</li>
+  </ul>
+
+  <h3>Salesforce Sales Cloud Implementation</h3>
+  <p>
+    We configured Sales Cloud as the unified front door for every sales interaction:
+  </p>
+  <ul>
+    <li><strong>Custom object model:</strong> Product configurations, territories, and approval hierarchies modeled to match GlobalTech's real organizational structure</li>
+    <li><strong>Lead & opportunity management:</strong> Standardized pipeline stages across all five regions with automated routing rules</li>
+    <li><strong>Approval workflows:</strong> Multi-tier discount and pricing approvals that route automatically based on deal size and margin</li>
+    <li><strong>Lightning Web Components:</strong> Custom UI components built for the specific configuration complexity of GlobalTech's product catalog</li>
+  </ul>
+
+  <h3>Custom CPQ Engine</h3>
+  <p>
+    Quote generation was the single biggest source of friction, so we built a purpose-built CPQ solution:
+  </p>
+  <ul>
+    <li><strong>Guided selling:</strong> Reps configure complex, multi-component industrial equipment orders through a rules-driven wizard that prevents invalid configurations</li>
+    <li><strong>Dynamic pricing:</strong> Pricing calculates automatically from real-time cost data, volume discounts, and approval-tier logic</li>
+    <li><strong>Automated document generation:</strong> Quotes, proposals, and contracts generate as branded PDFs directly from Salesforce</li>
+    <li><strong>Version control:</strong> Full audit history of every quote revision, eliminating disputes over "which version" was sent to a customer</li>
+  </ul>
+
+  <h3>ERP Integration</h3>
+  <p>
+    A real-time integration with GlobalTech's SAP ERP eliminated the manual re-entry that had been a major source of errors:
+  </p>
+  <ul>
+    <li><strong>MuleSoft integration layer:</strong> Bi-directional sync of inventory levels, pricing, and order status between Salesforce and SAP</li>
+    <li><strong>Real-time availability:</strong> Reps see live inventory and lead times while building a quote, instead of calling operations to check</li>
+    <li><strong>Order flow-through:</strong> Closed-won opportunities automatically create orders in SAP without manual re-keying</li>
+    <li><strong>Master data governance:</strong> Product catalog and customer records maintained as a single source of truth across both systems</li>
+  </ul>
+
+  <h3>Analytics & Visibility</h3>
+  <p>
+    Leadership finally got the pipeline visibility they'd been missing:
+  </p>
+  <ul>
+    <li>Tableau CRM dashboards providing real-time pipeline and forecast visibility across all regions</li>
+    <li>Automated weekly forecast rollups replacing manual spreadsheet consolidation</li>
+    <li>Rep-level productivity and quote-to-close analytics for coaching and performance management</li>
+    <li>Executive dashboards tracking the acquisition integration's sales performance specifically</li>
+  </ul>
+
+  <h3>Training & Change Management</h3>
+  <p>
+    A system this central to daily work only succeeds if people actually use it, so adoption was treated as a first-class deliverable:
+  </p>
+  <ul>
+    <li><strong>Role-based training:</strong> Separate curricula for reps, managers, and pricing analysts, each focused on their actual daily workflows</li>
+    <li><strong>Regional champions:</strong> Identified and trained a super-user in each region to provide peer support post-launch</li>
+    <li><strong>Phased go-live:</strong> Rolled out region by region rather than all at once, applying lessons from each launch to the next</li>
+    <li><strong>Post-launch office hours:</strong> Weekly drop-in sessions for the first two months to resolve friction quickly</li>
+  </ul>
+
+  <h3>Results & Impact</h3>
+  <p>
+    Nine months after go-live, GlobalTech's sales organization operates as a genuinely unified team for the first time since the acquisition:
+  </p>
+  <ul>
+    <li><strong>40% productivity increase:</strong> Reps spend measurably more time selling and less time on administrative quote work</li>
+    <li><strong>300% ROI:</strong> Achieved within the first year, driven by faster quote turnaround and reduced pricing errors</li>
+    <li><strong>65% faster quote turnaround:</strong> Average time from configuration request to delivered quote dropped from days to hours</li>
+    <li><strong>94% user adoption:</strong> Far above typical CRM adoption rates, credited directly to the phased rollout and regional champion program</li>
+    <li><strong>Unified pipeline visibility:</strong> Leadership now forecasts with confidence across all five regions from a single dashboard</li>
+  </ul>
+
+  <blockquote>
+    "We'd tried to implement a CRM twice before and both times it collapsed into a system nobody used. The difference this time was that Vireonix built the process around how our reps actually sell, not the other way around."
+    <cite>— VP of Sales Operations, GlobalTech Industries</cite>
+  </blockquote>
+</CaseStudyLayout>

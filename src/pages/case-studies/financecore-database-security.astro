@@ -1,0 +1,93 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+---
+
+<CaseStudyLayout
+  title="FinanceCore Bank: Database Security & Compliance"
+  description="How we helped FinanceCore Bank achieve PCI-DSS certification and secure 500TB of sensitive financial data through a comprehensive database security overhaul."
+  client="FinanceCore Bank"
+  industry="Financial Services"
+  services={["Database Security", "Cybersecurity", "Compliance Consulting"]}
+  duration="5 months"
+  results={[
+    { metric: "Compliance", value: "100%" },
+    { metric: "Data Secured", value: "500TB" },
+    { metric: "Audit Findings", value: "Zero" },
+    { metric: "Incident Response", value: "-70%" }
+  ]}
+  technologies={["PostgreSQL", "AWS KMS", "HashiCorp Vault", "Imperva", "Splunk", "Terraform", "CloudTrail", "GuardDuty"]}
+  challenge="FinanceCore Bank operated a sprawling estate of customer and transaction databases accumulated across a decade of acquisitions, with inconsistent encryption standards, overlapping access controls, and no centralized audit trail. An upcoming PCI-DSS Level 1 recertification and a state regulator's data-handling review put the bank on a hard deadline. Leadership needed a security overhaul that would pass audit without disrupting a system processing millions of daily transactions."
+  solution="We ran a full database security assessment across every production and reporting cluster, then implemented encryption at rest and in transit, centralized secrets management, fine-grained role-based access control, and real-time anomaly detection. The rollout was staged cluster by cluster behind a strict change-control process, with rollback plans validated in a mirrored staging environment before every production cutover."
+>
+  <h3>Assessment & Threat Modeling</h3>
+  <p>
+    Before touching any production system, we spent the first three weeks mapping FinanceCore's entire data estate:
+  </p>
+  <ul>
+    <li><strong>Data classification:</strong> Catalogued every database, table, and column containing PII, PAN (primary account number), or other regulated data</li>
+    <li><strong>Access audit:</strong> Reviewed every service account, human user, and API key with database access, flagging over-privileged and stale credentials</li>
+    <li><strong>Encryption gap analysis:</strong> Identified databases and backups still using legacy or no encryption</li>
+    <li><strong>Threat modeling:</strong> Ran structured threat modeling sessions against the highest-risk data flows, including third-party payment processor integrations</li>
+  </ul>
+
+  <h3>Encryption & Key Management</h3>
+  <p>
+    Encryption was the foundation of the PCI-DSS remediation:
+  </p>
+  <ul>
+    <li><strong>Encryption at rest:</strong> Enabled AES-256 encryption on all production PostgreSQL clusters and their automated backups</li>
+    <li><strong>Encryption in transit:</strong> Enforced TLS 1.2+ on every database connection, closing legacy unencrypted internal links</li>
+    <li><strong>Centralized key management:</strong> Migrated key generation and rotation to AWS KMS with customer-managed keys, replacing ad hoc key storage in application config</li>
+    <li><strong>Secrets management:</strong> Rolled out HashiCorp Vault for dynamic database credentials, eliminating long-lived passwords embedded in application code</li>
+  </ul>
+
+  <h3>Access Control Overhaul</h3>
+  <p>
+    We replaced FinanceCore's flat permission model with a least-privilege architecture:
+  </p>
+  <ul>
+    <li><strong>Role-based access control:</strong> Defined granular roles mapped to job function rather than broad "admin" or "read-write" grants</li>
+    <li><strong>Just-in-time access:</strong> Engineers request time-boxed elevated access through an approval workflow instead of holding standing credentials</li>
+    <li><strong>Multi-factor authentication:</strong> Enforced MFA for every human database login, including break-glass emergency access</li>
+    <li><strong>Quarterly access reviews:</strong> Automated reports flag dormant accounts and excessive permissions for manager sign-off</li>
+  </ul>
+
+  <h3>Monitoring & Incident Response</h3>
+  <p>
+    Continuous monitoring closed the visibility gap that had concerned auditors:
+  </p>
+  <ul>
+    <li><strong>Real-time query auditing:</strong> Imperva database activity monitoring flags anomalous queries, bulk exports, and off-hours access</li>
+    <li><strong>Centralized logging:</strong> All database and infrastructure logs stream into Splunk with retention aligned to PCI-DSS requirements</li>
+    <li><strong>Automated alerting:</strong> GuardDuty and custom Splunk correlation rules trigger on suspicious access patterns within minutes</li>
+    <li><strong>Incident runbooks:</strong> Documented, tested response procedures cut mean time to containment by 70%</li>
+  </ul>
+
+  <h3>Infrastructure as Code & Change Control</h3>
+  <p>
+    Every security control was codified so it couldn't silently drift out of compliance:
+  </p>
+  <ul>
+    <li>Database and network security configuration defined entirely in Terraform</li>
+    <li>Automated compliance scanning on every infrastructure change before merge</li>
+    <li>CloudTrail logging on all AWS API activity, feeding directly into the audit trail</li>
+    <li>Immutable infrastructure patterns for database replicas, reducing configuration drift</li>
+  </ul>
+
+  <h3>Results & Impact</h3>
+  <p>
+    FinanceCore passed its PCI-DSS Level 1 recertification with zero critical findings, well ahead of the regulatory deadline:
+  </p>
+  <ul>
+    <li><strong>100% compliance:</strong> Achieved full PCI-DSS Level 1 recertification with zero critical audit findings</li>
+    <li><strong>500TB secured:</strong> Every production and backup dataset now encrypted at rest and in transit</li>
+    <li><strong>70% faster incident response:</strong> Mean time to containment dropped from hours to under 15 minutes</li>
+    <li><strong>Zero standing credentials:</strong> Eliminated long-lived database passwords across all production systems</li>
+    <li><strong>Audit-ready by default:</strong> Compliance evidence now generates automatically instead of requiring weeks of manual collection</li>
+  </ul>
+
+  <blockquote>
+    "Vireonix didn't just get us through the audit—they rebuilt how we think about data security. Our examiners called it one of the cleanest PCI-DSS reviews they'd seen at an institution our size."
+    <cite>— Chief Information Security Officer, FinanceCore Bank</cite>
+  </blockquote>
+</CaseStudyLayout>
