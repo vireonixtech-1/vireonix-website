@@ -10,7 +10,7 @@ const industries = [
     icon: '🏥',
     description: 'HIPAA-compliant solutions for healthcare providers, payers, and life sciences companies.',
     services: ['EHR Integration', 'Telehealth', 'AI Diagnostics', 'Claims Processing'],
-    stats: { clients: '50+', compliance: 'HIPAA' }
+    stats: { highlight: 'HIPAA Compliant' }
   },
   {
     slug: 'financial-services',
@@ -18,7 +18,7 @@ const industries = [
     icon: '💰',
     description: 'Secure, compliant solutions for banks, insurance companies, and fintech startups.',
     services: ['Core Banking', 'Fraud Detection', 'RegTech', 'Digital Banking'],
-    stats: { clients: '40+', compliance: 'PCI-DSS, SOX' }
+    stats: { highlight: 'PCI-DSS & SOX Compliant' }
   },
   {
     slug: 'retail-ecommerce',
@@ -26,7 +26,7 @@ const industries = [
     icon: '🛒',
     description: 'Scalable commerce solutions that drive revenue and enhance customer experiences.',
     services: ['E-Commerce Platforms', 'POS Systems', 'Inventory Management', 'Personalization'],
-    stats: { clients: '75+', transactions: '$500M+' }
+    stats: { highlight: 'Built for Scale' }
   },
   {
     slug: 'manufacturing',
@@ -34,7 +34,7 @@ const industries = [
     icon: '🏭',
     description: 'Industry 4.0 solutions connecting shop floor to top floor.',
     services: ['IoT Integration', 'Supply Chain', 'Quality Management', 'Predictive Maintenance'],
-    stats: { clients: '30+', efficiency: '+35%' }
+    stats: { highlight: 'Shop Floor to Top Floor' }
   },
   {
     slug: 'technology',
@@ -42,7 +42,7 @@ const industries = [
     icon: '💻',
     description: 'Helping tech companies scale products and operations efficiently.',
     services: ['Product Development', 'Cloud Architecture', 'DevOps', 'AI/ML Integration'],
-    stats: { clients: '100+', products: '200+' }
+    stats: { highlight: 'Built to Scale' }
   },
   {
     slug: 'education',
@@ -50,7 +50,7 @@ const industries = [
     icon: '🎓',
     description: 'EdTech solutions for schools, universities, and online learning platforms.',
     services: ['LMS Development', 'Virtual Classrooms', 'Student Portals', 'Analytics'],
-    stats: { clients: '25+', students: '1M+' }
+    stats: { highlight: 'FERPA Compliant' }
   }
 ];
 
@@ -109,8 +109,8 @@ const breadcrumbSchema = {
               </div>
 
               <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                <div class="text-sm text-gray-500">
-                  <span class="font-semibold text-gray-900">{industry.stats.clients}</span> Clients
+                <div class="text-sm font-semibold text-gray-900">
+                  {industry.stats.highlight}
                 </div>
                 <span class="text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn More

@@ -25,13 +25,11 @@
 
 ## About
 
-Official website for **Vireonix Technologies LLC** - an enterprise technology consulting firm founded in 1999, headquartered in Alpharetta, Georgia, USA. We specialize in digital transformation, software development, and IT consulting services.
+Official website for **Vireonix Technologies LLC** - an enterprise technology consulting firm headquartered in Alpharetta, Georgia, USA. We specialize in digital transformation, software development, and IT consulting services.
 
 ### Company Highlights
 
-- **25+ Years** of enterprise experience
-- **300+ Clients** served globally
-- **50+ Countries** worldwide reach
+- **Enterprise Clients** served globally
 - **ISO 27001 & SOC 2** certified
 
 ---
